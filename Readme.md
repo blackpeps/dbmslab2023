@@ -2,6 +2,51 @@ DBMS LAB 2023
 
 17/08/2023
 
+# DBMS Lab 2023
+
+### [Lab Experiments](#goback)
+
+| Experiment                                                                                                      | Date          |
+| --------------------------------------------------------------------------------------------------------------- | ------------- |
+| 1. [ Introduction to ER diagram and SQL](#prgm01)                                                               | Not yet done. |
+| 2. [ Creation, modification, configuration and deletion command. ](#prgm02)                                     | 17-08-2023    |
+| 3. [ Exprot ER diagram from database and verify relationships. ](#prgm03)                                       | Not yet done. |
+| 4. [ Database Initialisation, Data Insert, Import to database. ](#prgm04)                                       | Not yet done. |
+| 5. [ Practise SQL commands for DML. ](#prgm05)                                                                  | 17-08-2023    |
+| 6. [ Implementation of built in functions. ](#prgm06)                                                           | Not yet done. |
+| 7. [ Implementation of aggregate functions. ](#prgm07)                                                          | Not yet done. |
+| 8. [ Implementation of orderby, group by, and having. ](#prgm08)                                                | Not yet done. |
+| 9. [ Implementation of Set Operations, nested and queries. ](#prgm09)                                           | Not yet done. |
+| 10. [ Practise of SQL DCL commands Rollback, commit point. ](#prgm10)                                           | Not yet done. |
+| 11. [ Implementation of DCL commands for granting and revoking user privileges. ](#prgm11)                      | Not yet done. |
+| 12. [ Practise of SQL Commands for creation or view assertion. ](#prgm12)                                       | Not yet done. |
+| 13. [ Implementation of various control structures like, if then, then else, if then else, if while. ](#prgm13) | Not yet done. |
+| 14. [ Creation of procedure,triggers, functions. ](#prgm14)                                                     | Not yet done. |
+| 15. [ Creation of cursor. ](#prgm15)                                                                            | Not yet done. |
+| 16. [ Creation of Packages. ](#prgm16)                                                                          | Not yet done. |
+| 17. [ Creation of PL/SQL block for exception handling. ](#prgm17)                                               | Not yet done. |
+| 18. [ Student database Management System. ](#prgm18)                                                            | Not yet done. |
+
+<a name="prgm01"></a>
+
+## 01. Introduction to ER diagram and SQL
+
+a. [ Introduction to ER Model University Management System. ](#prgm01a)
+
+b. [ Introduction to ER Diagram. ](#prgm01b)
+
+c. [ Introduction to SQL. ](#prgm01c)
+
+<a name="prgm02"></a>
+
+## 02. Creation, modification, configuration and deletion command.
+
+sometext
+
+<a name="prgm05"></a>
+
+## 05. Practise SQL commands for DML.
+
 mysql -u root -p
 show databases;
 create database sreeram;
@@ -10,7 +55,7 @@ insert into student values (1, 'Kevin', 20);
 insert into student values (2, 'Nikhil', 20), (3, 'Tinu', 20), (3, 'Sreeram', 20), (4, 'Merlin', 20);
 alter table student add ph_no int;
 alter table student change ph_no phno int;
-select * from student;
+select \* from student;
 alter table student add dob date;
 select rollno, name from student where rollno>2;
 update student set dob=2002-12-13 where rollno=4;
