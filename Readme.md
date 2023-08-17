@@ -25,9 +25,18 @@
 
 ## Some Basics before you start SQL
 
-Get mySQL for your system at following Links:
+- Get mySQL for windows at following Link: [ Windows ](https://dev.mysql.com/downloads/windows/installer/) (This is an all-in-one package, so just download and install. It should be around 331 MB in size.)
 
-##### [ Windows ](https://dev.mysql.com/downloads/windows/installer/) (This is an all-in-one package, so just download and install. It should be around 331 MB in size.)
+- A note while installation, leave the default settings as it is, except for selecting the option to install all the components (Full).
+- Run `MySQL 8.0 Command Line Client` from start menu (As destop shortcuts are rarely created).
+
+  ![Alt text](/img/image-14.png)
+
+- Do set a password for the root. Unlike linux (Ubuntu) you can directly login to your mySQL without needing to enter the following:
+
+```
+mysql -u root -p
+```
 
 <a name="prgm01"></a>
 
