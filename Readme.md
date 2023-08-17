@@ -25,11 +25,9 @@
 
 ## Some Basics before you start SQL
 
-```
-mysql -u root -p
-```
+Get mySQL for your system at following Links:
 
-This commad helps you start using MySQL.
+##### [ Windows ](https://dev.mysql.com/downloads/windows/installer/) (This is an all-in-one package, so just download and install. It should be around 331 MB in size.)
 
 <a name="prgm01"></a>
 
@@ -51,12 +49,6 @@ c. [ Introduction to SQL. ](#prgm01c)
 create database database_name;
 ```
 
-#### Example
-
-```
-create database sreeram;
-```
-
 ### Create Table
 
 ```
@@ -66,23 +58,13 @@ create table table_name (
 );
 ```
 
-#### Example
-
-```
-create table student (
-    rollno int primarykey,
-    name varchar(255),
-    age int
-);
-```
-
 ### Modification
 
 ```
 alter table table_name modify column_name datatype(size);
 ```
 
-_Note:_ **_For Systems running different versions of mySQL, please use the following syntax to get throught the error:_**
+_Note:_ **_If you are getting error, use the following command as an alternative:_**
 
 ```
 alter table table_name change old_column_name new_column_name datatype(size);
@@ -106,26 +88,134 @@ delete from table_name;
 drop table table_name;
 ```
 
-<a name="prgm05"></a>
-
 ## 05. Practise SQL commands for DML.
 
-show databases;
-create database sreeram;
-create table student (rollno int primarykey, name varchar(255), age int);
-insert into student values (1, 'Kevin', 20);
-insert into student values (2, 'Nikhil', 20), (3, 'Tinu', 20), (3, 'Sreeram', 20), (4, 'Merlin', 20);
+> Creating database
+
+```
+create database sqlpractice;
+```
+
+![Alt text](img/image001.png)
+
+> Creating table
+
+```
+create table student (
+    rollno int primary key,
+    name varchar(255),
+    age int
+);
+```
+
+![Alt text](img/image002.png)
+
+> Inserting values into table
+
+```
+insert into student values
+(1, 'Kevin', 20),
+(2, 'Nikhil Philip', 20),
+(3, 'Tinu', 20),
+(4, 'Sreeram', 20),
+(5, 'Merlin', 20),
+(6, 'Nikhil Abraham', 20);
+```
+
+![Alt text](img/image.png)
+
+> Adding an extra column after table is already created.
+
+```
 alter table student add ph_no int;
-alter table student change ph_no phno int;
-select \* from student;
+```
+
+![Alt text](/img/image-1.png)
+
+```
 alter table student add dob date;
-select rollno, name from student where rollno>2;
-update student set dob=2002-12-13 where rollno=4;
-update student set phno=5678;
-desc student;
+```
+
+![Alt text](/img/image-2.png)
+
+> Changing the column name heading from one to another
+
+```
+alter table student change ph_no phone_no int;
+```
+
+![Alt text](/img/image-3.png)
+
+> Modifying datatypes of an existing attribute
+
+```
+alter table student modify name varchar(100);
+```
+
+![Alt text](/img/image-4.png)
+
+> Inserting values into an existing tuple
+
+```
+update student set dob='2002-12-13' where rollno=4;
+```
+
+The above action is restricted to tuples of the condition provided.
+
+![Alt text](/img/image-5.png)
+
+```
+update student set phone_no=5678;
+```
+
+The above action updates every values in the selected attribute of the table.
+
+![Alt text](/img/image-6.png)
+
+> Inserting date and time column and values to the same
+
+```
 alter table student add time time;
+```
+
+![Alt text](/img/image-7.png)
+
+```
 alter table student add date_and_time timestamp;
+```
+
+![Alt text](/img/image-8.png)
+
+```
 update student set date_and_time='2023-10-11 04:55:23' where rollno=5;
+```
+
+![Alt text](/img/image-9.png)
+
+```
 update student set time='05:30:13' where rollno=4;
+```
+
+![Alt text](/img/image-10.png)
+
+<a name="prgm05"></a>
+
+> Displaying table in various ways
+
+```
+select * from student;
+```
+
+![Alt text](/img/image-11.png)
+
+```
+select rollno, name from student where rollno>2;
+```
+
+![Alt text](/img/image-12.png)
+
+```
 delete from student where rollno=4;
-delete from student;
+```
+
+![Alt text](/img/image-13.png)
