@@ -9,9 +9,9 @@
 | 3. [ Exprot ER diagram from database and verify relationships. ](#prgm03)                                       | Not yet done. |
 | 4. [ Database Initialisation, Data Insert, Import to database. ](#prgm04)                                       | Not yet done. |
 | 5. [ Practise SQL commands for DML. ](#prgm05)                                                                  | 17-08-2023    |
-| 6. [ Implementation of built in functions. ](#prgm06)                                                           | Not yet done. |
-| 7. [ Implementation of aggregate functions. ](#prgm07)                                                          | Not yet done. |
-| 8. [ Implementation of orderby, group by, and having. ](#prgm08)                                                | Not yet done. |
+| 6. [ Implementation of built in functions. ](#prgm06)                                                           | 24-08-2023 |
+| 7. [ Implementation of aggregate functions. ](#prgm07)                                                          | 24-08-2023 |
+| 8. [ Implementation of orderby, group by, and having. ](#prgm08)                                                | 24-08-2023 |
 | 9. [ Implementation of Set Operations, nested and queries. ](#prgm09)                                           | Not yet done. |
 | 10. [ Practise of SQL TCL commands Rollback, commit, savepoint. ](#prgm10)                                      | Not yet done. |
 | 11. [ Implementation of DCL commands for granting and revoking user privileges. ](#prgm11)                      | Not yet done. |
@@ -224,7 +224,15 @@ select rollno, name from student where rollno>2;
 ![Alt text](/img/image-12.png)
 
 ```
+
+
+
 delete from student where rollno=4;
 ```
 
 ![Alt text](/img/image-13.png)
+
+
+<a name="prgm06"></a>
+
+## For the time being download [this PDF](/pdfs/Dbms_mannual_cek[2].pdf) from my repository to get started, This page will be updated as the lab session ends.
