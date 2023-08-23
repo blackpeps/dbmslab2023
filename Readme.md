@@ -235,4 +235,18 @@ delete from student where rollno=4;
 
 <a name="prgm06"></a>
 
-## For the time being download [this PDF](/pdfs/Dbms_mannual_cek[2].pdf) from my repository to get started, This page will be updated as the lab session ends.
+## 06. Implementation of built-in functions.
+
+> For the time being download [this PDF](/pdfs/Dbms_mannual_cek[2].pdf) from my repository to get started, This page will be updated as the lab session ends.
+
+<a name="prgm07"></a>
+
+## 07. Implementation of aggregate functions.
+
+> For the time being download [this PDF](/pdfs/Dbms_mannual_cek[2].pdf) from my repository to get started, This page will be updated as the lab session ends.
+
+<a name="prgm08"></a>
+
+## 08. Implementation of order by, group by, and having.
+
+> For the time being download [this PDF](/pdfs/Dbms_mannual_cek[2].pdf) from my repository to get started, This page will be updated as the lab session ends.
