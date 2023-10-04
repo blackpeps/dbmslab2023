@@ -163,7 +163,14 @@ CREATE TABLE M_Mark (
 
 #### Table contents
 
-##### Whole table
+> I had purposefully skipped the portion to insert entities into the table as you are already familiar with the same. So please go through the contents that are already present in the table I created for you.
+
+
+> **"desc table_name" need not be written down, only write down "select * from table_name"**
+
+##### **WHOLE_TABLE**
+
+> Only refer
 
 ```
 mysql> show tables;
@@ -180,6 +187,21 @@ mysql> show tables;
 
 ##### faculty
 
+> *Only Refer*
+
+```
+mysql> desc faculty;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| FacultyCode | int          | NO   | PRI | NULL    |       |
+| FacultyName | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+```
+
+> *Write down the following*
+
 ```
 mysql> select * from faculty;
 +-------------+-------------+
@@ -195,6 +217,23 @@ mysql> select * from faculty;
 ```
 
 ##### subject
+
+> *Only Refer*
+
+```
+mysql> desc subject;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| SubjectCode | int          | NO   | PRI | NULL    |       |
+| SubjectName | varchar(255) | YES  |     | NULL    |       |
+| MaxMark     | int          | YES  |     | NULL    |       |
+| FacultyCode | int          | YES  | MUL | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+```
+
+> *Write down the following*
 
 ```
 mysql> select * from subject;
@@ -214,6 +253,24 @@ mysql> select * from subject;
 
 ##### student
 
+> *Only Refer*
+
+```
+mysql> desc student;
++----------------+---------------------------+------+-----+---------+-------+
+| Field          | Type                      | Null | Key | Default | Extra |
++----------------+---------------------------+------+-----+---------+-------+
+| StudentCode    | int                       | NO   | PRI | NULL    |       |
+| StudentName    | varchar(255)              | YES  |     | NULL    |       |
+| DOB            | date                      | YES  |     | NULL    |       |
+| StudentsBranch | enum('CS','EC','EE','ME') | YES  |     | NULL    |       |
+| AdmissionDate  | date                      | YES  |     | NULL    |       |
++----------------+---------------------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+```
+
+> *Write down the following*
+
 ```
 mysql> select * from student;
 +-------------+-------------+------------+----------------+---------------+
@@ -231,6 +288,22 @@ mysql> select * from student;
 ##### m_mark
 
 > Note: The below marks need not be assigned for every student concerning the subject. As there are 7 subjects and 5 students in total, there will be 35 entries in total. This will be reduced while writing the fair record. Right now, I'm stressed and feeling sleepy, please adjust to what you have right now. If you are planning to reduce the entries, try to answer the corresponding question (8) with the reduced input.
+
+> *Only Refer*
+
+```
+mysql> desc m_mark;
++-------------+------+------+-----+---------+-------+
+| Field       | Type | Null | Key | Default | Extra |
++-------------+------+------+-----+---------+-------+
+| StudentCode | int  | YES  | MUL | NULL    |       |
+| SubjectCode | int  | YES  | MUL | NULL    |       |
+| Mark        | int  | YES  |     | NULL    |       |
++-------------+------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+```
+
+> *Write down the following with respect to my previous suggestion*
 
 ```
 mysql> select * from m_mark;
