@@ -3,18 +3,21 @@
 > For the time being download [this PDF](pdfs/exp9.pdf) from my repository to get started, This page will be updated as the lab session ends.
 
 
-SET OPERATIONS
+### **SET OPERATIONS**
 
-
+```
 mysql> create database tinu;
 Query OK, 1 row affected (0.00 sec)
-
+```
+```
 mysql> use tinu;
 Database changed
+```
+```
 mysql> create table employee(id int primary key,fname varchar(250),lname varchar(30),department varchar(40),salary int );
 Query OK, 0 rows affected (0.28 sec)
-
-
+```
+```
 mysql> desc employee;
 +------------+--------------+------+-----+---------+-------+
 | Field      | Type         | Null | Key | Default | Extra |
@@ -26,11 +29,12 @@ mysql> desc employee;
 | salary     | int(11)      | YES  |     | NULL    |       |
 +------------+--------------+------+-----+---------+-------+
 5 rows in set (0.01 sec)
-
+```
+```
 mysql> insert into employee values
     -> (1,'nm1','lm1','dept1',20000);
 Query OK, 1 row affected (0.05 sec)
-
+```
 mysql> insert into employee values (2,'nm2','lm2','dept2',30000);
 Query OK, 1 row affected (0.05 sec)
 
