@@ -1,7 +1,5 @@
 ## 08. Implementation of order by, group by, and having.
 
-> For the time being download [this PDF](pdfs/exp9.pdf) from my repository to get started, This page will be updated as the lab session ends.
-
 > This section will contain two practice questions. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
 
 ---
@@ -143,7 +141,7 @@ mysql> SELECT COUNT(ID_NUMBER), DEPT
 ```
 ---
 
-### Practise Question 2 (Try this for yourself, one day I'll upload the answer if I get time)
+### Practise Question 2 (Try this for yourself)
 
 Create two tables. MANAGER_ID is the empno of the employee whom the employee reports to. DEPTNO is a foreign key. Insert these values into the department table.
 
@@ -173,3 +171,4 @@ Create two tables. MANAGER_ID is the empno of the employee whom the employee rep
 20) Display the employee name and department name of all employees who work in a department that has at least 3 employees. Order the list in alphabetical order first by department name, then by employee name.
 21) Write a query to list the length of service of the employees (of the form n years and m months).
 ---
+> You can refer [this PDF](pdfs/exp9.pdf) from my repository for the answer.
