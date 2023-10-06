@@ -1,150 +1,100 @@
-## 08. 10. Practise of SQL TCL commands Rollback, commit, savepoint.
+## 10. Practise of SQL TCL commands Rollback, commit, savepoint.
 
-> For the time being download [this PDF](pdfs/exp10.pdf) from my repository to get started, This page will be updated as the lab session ends.
+> This section will contain two practice questions. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
 
+---
+### TRANSACTIONAL CONTROL LANGUAGE (T.C.L)
 
-mysql> CREATE TABLE student (
-    ->   id INT PRIMARY KEY AUTO_INCREMENT,
-    ->   name VARCHAR(50) NOT NULL,
-    ->   dob DATE NOT NULL,
-    ->   age INT NOT NULL,
-    ->   grade VARCHAR(10) NOT NULL
-    -> clear
-    -> ;
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'clear' at line 7
-mysql> CREATE TABLE student (
-    ->   id INT PRIMARY KEY AUTO_INCREMENT,
-    ->   name VARCHAR(50) NOT NULL,
-    ->   dob DATE NOT NULL,
-    ->   age INT NOT NULL,
+A transaction is a logical unit of work. All changes made to the database can be referred to as a transaction. Transaction changes can be made permanent to the database only if they are committed a transaction begins with an executable SQL statement & ends explicitly with either a rollback or commit statement.
+
+#### COMMIT
+This command is used to end a transaction only with the help of the commit command transaction changes can be made permanent to the database.
+
+*Syntax:*
+
+`COMMIT;`
+
+#### SAVE POINT
+Save points are like marks to divide a very lengthy transaction into smaller ones. They are used to identify a point in a transaction to which we can later roll back. Thus, save point is used in conjunction with role back.
+
+*Syntax:*
+
+`SAVEPOINT SAVEPOINT_ID;`
+
+#### ROLLBACK
+A role back command is used to undo the current transactions. We can roll back the entire transaction so that all changes made by SQL statements are undo (or) roll back a transaction to a save point so that the SQL statements after the save point are rolled back.
+
+*Syntax:*
+
+`ROLE BACK;` (current transaction that can be back)
+
+`ROLE BACK to save_point_ID;`
+
+---
+### Practise Questions
+
+1. Create a student table
+2. Write a query to start the transaction.
+3. Write a query to set autocommit to 0.
+4. Write a query to implement savepoints 1.
+5. Update the student table and set age 29 where the id is 9.
+6. Write a query to implement rollback to S1.
+7. Write a query to implement a commit.
+8. Insert a value into the table.
+9. Write a query rollback.
+
+#### Question 1
+```
+mysql> CREATE TABLE Student (
+    ->     id INT PRIMARY KEY,
+    ->     name VARCHAR(50),
+    ->     age INT
     -> );
-ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ')' at line 6
-mysql> CREATE TABLE student (   id INT PRIMARY KEY AUTO_INCREMENT,   name VARCHAR(50) NOT NULL,   dob DATE NOT NULL,   age INT NOT NULL );
-Query OK, 0 rows affected (0.63 sec)
-
-mysql> INSERT INTO student (name, dob, age)
-    -> VALUES
-    ->   ('John Doe', '1998-05-15', 23),
-    ->   ('Jane Smith', '2000-09-23', 21),
-    ->   ('Michael Johnson', '1999-02-10', 22),
-    ->   ('Emily Williams', '2001-07-07', 20),
-    ->   ('David Brown', '1997-11-30', 24),
-    ->   ('Sarah Davis', '1996-03-25', 25);
-Query OK, 6 rows affected (0.16 sec)
-Records: 6  Duplicates: 0  Warnings: 0
-
+Query OK, 0 rows affected (0.02 sec)
+```
+#### Question 2
+```
 mysql> START TRANSACTION;
+Query OK, 0 rows affected (0.03 sec)
+```
+#### Question 3
+```
+mysql> SET autocommit = 0;
 Query OK, 0 rows affected (0.00 sec)
-
-mysql> SET autocommit =0;
+```
+#### Question 4
+```
+mysql> SAVEPOINT S1;
 Query OK, 0 rows affected (0.00 sec)
-
-mysql> SAVEPOINT savepoint1;
+```
+#### Question 5
+```
+mysql> UPDATE Student SET age = 29 WHERE id = 9;
+Query OK, 0 rows affected (0.04 sec)
+Rows matched: 0  Changed: 0  Warnings: 0
+```
+#### Question 6
+```
+mysql> ROLLBACK TO S1;
 Query OK, 0 rows affected (0.00 sec)
-
-mysql> update student set age = 15 where id =2;
+```
+#### Question 7
+```
+mysql> COMMIT;
+Query OK, 0 rows affected (0.00 sec)
+```
+#### Question 8
+```
+mysql> INSERT INTO Student (id, name, age)
+    -> VALUES (10, 'John', 25);
 Query OK, 1 row affected (0.00 sec)
-Rows matched: 1  Changed: 1  Warnings: 0
-
-mysql> select * from student;
-+----+-----------------+------------+-----+
-| id | name            | dob        | age |
-+----+-----------------+------------+-----+
-|  1 | John Doe        | 1998-05-15 |  23 |
-|  2 | Jane Smith      | 2000-09-23 |  15 |
-|  3 | Michael Johnson | 1999-02-10 |  22 |
-|  4 | Emily Williams  | 2001-07-07 |  20 |
-|  5 | David Brown     | 1997-11-30 |  24 |
-|  6 | Sarah Davis     | 1996-03-25 |  25 |
-+----+-----------------+------------+-----+
-6 rows in set (0.00 sec)
-
-mysql> ROLLBACK to savepoint1;
-Query OK, 0 rows affected (0.05 sec)
-
-mysql> select * from student;
-+----+-----------------+------------+-----+
-| id | name            | dob        | age |
-+----+-----------------+------------+-----+
-|  1 | John Doe        | 1998-05-15 |  23 |
-|  2 | Jane Smith      | 2000-09-23 |  21 |
-|  3 | Michael Johnson | 1999-02-10 |  22 |
-|  4 | Emily Williams  | 2001-07-07 |  20 |
-|  5 | David Brown     | 1997-11-30 |  24 |
-|  6 | Sarah Davis     | 1996-03-25 |  25 |
-+----+-----------------+------------+-----+
-6 rows in set (0.00 sec)
-
-mysql> commit;
+```
+#### Question 9
+```
+mysql> ROLLBACK;
 Query OK, 0 rows affected (0.00 sec)
-
-mysql> insert into student values('james bond','2003-08-22',20);
-ERROR 1136 (21S01): Column count doesn't match value count at row 1
-mysql> desc student;
-+-------+-------------+------+-----+---------+----------------+
-| Field | Type        | Null | Key | Default | Extra          |
-+-------+-------------+------+-----+---------+----------------+
-| id    | int         | NO   | PRI | NULL    | auto_increment |
-| name  | varchar(50) | NO   |     | NULL    |                |
-| dob   | date        | NO   |     | NULL    |                |
-| age   | int         | NO   |     | NULL    |                |
-+-------+-------------+------+-----+---------+----------------+
-4 rows in set (0.00 sec)
-
-mysql> insert into student(name,dob,age) values('james bond','2003-08-22',20);
-Query OK, 1 row affected (0.00 sec)
-
+```
+```
 mysql> select * from student;
-+----+-----------------+------------+-----+
-| id | name            | dob        | age |
-+----+-----------------+------------+-----+
-|  1 | John Doe        | 1998-05-15 |  23 |
-|  2 | Jane Smith      | 2000-09-23 |  21 |
-|  3 | Michael Johnson | 1999-02-10 |  22 |
-|  4 | Emily Williams  | 2001-07-07 |  20 |
-|  5 | David Brown     | 1997-11-30 |  24 |
-|  6 | Sarah Davis     | 1996-03-25 |  25 |
-|  7 | james bond      | 2003-08-22 |  20 |
-+----+-----------------+------------+-----+
-7 rows in set (0.00 sec)
-
-mysql> savepoint savepoint2;
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> rollback to savepoint2;
-Query OK, 0 rows affected (0.00 sec)
-
-mysql> select * from student;
-+----+-----------------+------------+-----+
-| id | name            | dob        | age |
-+----+-----------------+------------+-----+
-|  1 | John Doe        | 1998-05-15 |  23 |
-|  2 | Jane Smith      | 2000-09-23 |  21 |
-|  3 | Michael Johnson | 1999-02-10 |  22 |
-|  4 | Emily Williams  | 2001-07-07 |  20 |
-|  5 | David Brown     | 1997-11-30 |  24 |
-|  6 | Sarah Davis     | 1996-03-25 |  25 |
-|  7 | james bond      | 2003-08-22 |  20 |
-+----+-----------------+------------+-----+
-7 rows in set (0.00 sec)
-
-mysql> rollback to savepoint1;
-ERROR 1305 (42000): SAVEPOINT savepoint1 does not exist
-mysql> commit;
-Query OK, 0 rows affected (0.09 sec)
-
-mysql> rollback to savepoint2;
-ERROR 1305 (42000): SAVEPOINT savepoint2 does not exist
-
-
-
-
-
-
-
-
-
-
-
-
-
+Empty set (0.00 sec)
+```
