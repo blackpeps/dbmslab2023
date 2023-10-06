@@ -128,11 +128,8 @@ mysql> SELECT DEPT,
 ```
 ##### Question 5
 ```
-mysql> SELECT COUNT(ID_NUMBER), DEPT
-    -> FROM student
-    -> GROUP BY DEPT
-    -> HAVING COUNT(ID_NUMBER) > 1
-    -> ORDER BY COUNT(ID_NUMBER) DESC;
+mysql> SELECT COUNT(ID_NUMBER), DEPT FROM student GROUP BY DEPT
+    -> HAVING COUNT(ID_NUMBER) > 1 ORDER BY COUNT(ID_NUMBER) DESC;
 +------------------+------+
 | COUNT(ID_NUMBER) | DEPT |
 +------------------+------+
