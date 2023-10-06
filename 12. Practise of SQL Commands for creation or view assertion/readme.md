@@ -1,10 +1,6 @@
 ## 12. Practise SQL Commands for creation or view assertion.
 
-> This section will contain two practice questions. One question is a combination of all the topics mentioned. There will be three questions according to each section. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
-
----
-
-### Practise Question 1
+### Practise Questions
 
 1. Create a table and insert values into the emp55 table.
 2. Write a query to display the emp55 from employee55 where salary is greater than 10000.
