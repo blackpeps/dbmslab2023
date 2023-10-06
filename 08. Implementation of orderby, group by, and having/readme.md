@@ -93,22 +93,6 @@ mysql> SELECT * FROM student ORDER BY ID_NUMBER DESC;
 ```
 ##### Question 3
 ```
-mysql> SELECT * FROM student ORDER BY ID_NUMBER DESC;
-+-----------+--------------+------+---------+-------+-------+---------+
-| ID_NUMBER | STUDENT_NAME | DEPT | ADDRESS | MARKS | TOTAL | AVERAGE |
-+-----------+--------------+------+---------+-------+-------+---------+
-|         7 | RINJU        | CSE  | STU     |    35 |    50 |      20 |
-|         6 | RENJU        | CSE  | PQR     |    25 |    50 |      18 |
-|         5 | SANJU        | MECH | MNO     |    50 |    50 |      25 |
-|         4 | CHINJU       | EEE  | JKL     |    40 |    50 |      20 |
-|         3 | KUNJU        | EC   | GHI     |    30 |    50 |      15 |
-|         2 | ANJU         | CE   | DEF     |    20 |    50 |      10 |
-|         1 | MANJU        | CSE  | ABC     |    10 |    50 |       5 |
-+-----------+--------------+------+---------+-------+-------+---------+
-7 rows in set (0.00 sec)
-```
-##### Question 4
-```
 mysql> SELECT DEPT,
     ->        MIN(MARKS) AS MIN_MARKS,
     ->        MAX(MARKS) AS MAX_MARKS,
@@ -123,7 +107,24 @@ mysql> SELECT DEPT,
 | EEE  |        40 |        40 |   40.0000 |
 | MECH |        50 |        50 |   50.0000 |
 +------+-----------+-----------+-----------+
-5 rows in set (0.04 sec)
+5 rows in set (0.00 sec)
+```
+##### Question 4
+```
+mysql> SELECT DEPT,
+    ->        MIN(MARKS) AS MIN_MARKS,
+    ->        MAX(MARKS) AS MAX_MARKS
+    -> FROM student GROUP BY DEPT;
++------+-----------+-----------+
+| DEPT | MIN_MARKS | MAX_MARKS |
++------+-----------+-----------+
+| CSE  |        10 |        35 |
+| CE   |        20 |        20 |
+| EC   |        30 |        30 |
+| EEE  |        40 |        40 |
+| MECH |        50 |        50 |
++------+-----------+-----------+
+5 rows in set (0.00 sec)
 ```
 ##### Question 5
 ```
