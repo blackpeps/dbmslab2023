@@ -1,9 +1,5 @@
 ## 11. Implementation of DCL commands for granting and revoking user privileges.
 
-> This section will contain two practice questions. One question is a combination of all the topics mentioned. There will be three questions according to each section. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
-
----
-
 ### PRIVILEGES
 A privilege is a right to execute an SQL statement or to access another user's object. In Oracle, there are two types of privileges
 - System Privileges
