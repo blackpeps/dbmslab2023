@@ -1,6 +1,6 @@
-## 08. Implementation of order by, group by, and having.
+## 09. Implementation of Set Operations, nested and queries.
 
-> This section will contain two practice questions. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
+> This section will contain two practice questions. One question is a combination of all the topics mentioned. There will be three questions according to each section. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
 
 ---
 
@@ -12,11 +12,11 @@ Consider this schema.
 
 `Employee2(id, fname, lname, dept, designation, salary)`
 
-1. Display all the employee details from employee 1 & 2 using union all.
-2. Display all the employee details from employee 1 & 2 using union.
-3. Display all the employee details from employee 1 & 2 using union & order by fname.
+1. Display all the employee details from employees 1 & 2 using union all.
+2. Display all the employee details from employees 1 & 2 using the union.
+3. Display all the employee details from employees 1 & 2 using union & order by fname.
 4. Display all the employee details from employee 1 where fname in & fname from employee 2.
-5. Display all the employee details from employee 1 where fname not in & fname from employee 2.
+5. Display all the employee details from employee 1 where fname is not in & fname from employee 2.
 
 #### Performing Queries
 
