@@ -1,0 +1,326 @@
+Implementation of various control structures like IF-THEN, IF-THEN-ELSE, IF-THEN
+ELSIF, CASE, WHILE using PL/SQL
+Procedural Language/Structured Query Language (PL/SQL) is an extension of SQL.
+Basic Syntax of PL/SQL
+DECLARE
+/* Variables can be declared here */
+BEGIN
+/* Executable statements can be written here */
+EXCEPTION
+/* Error handlers can be written here. */
+END;
+As we want output of PL/SQL Program on screen, before Starting writing anything type (Only Once per session)
+SET SERVEROUTPUT ON
+CONDITIONAL CONTROL IN PL/SQL:
+In PL/SQL, the if statement allows you to control the execution of a block of code. In PL/SQL you can use the IF – THEN – ELSIF – ELSE – END IF statements in code blocks that will allow you to write specific conditions under which a specific block of code will be executed
+Ex :- PL/SQL to find addition of two numbers
+DECLARE
+A INTEGER := &A;
+B INTEGER := &B;
+C INTEGER;
+BEGIN
+C := A + B;
+DBMS_OUTPUT.PUT_LINE ('THE SUM IS '||C);
+END;
+/
+Decision making with IF statement :-
+The general syntax for the using IF--ELSE statement is
+IF (TEST_CONDITION) THEN
+SET OF STATEMENTS
+ELSE
+SET OF STATEMENTS
+END IF;
+For Nested IF—ELSE Statement we can use IF--ELSIF—ELSE as follows
+IF (TEST_CONDITION) THEN
+SET OF STATEMENTS
+ELSIF (CONDITION)
+SET OF STATEMENTS
+END IF;
+Ex:- Largest of three numbers.
+This program can be written in number of ways, here are the two different ways to write the program.
+Using IFELSE
+DECLARE
+A NUMBER := &A;
+B NUMBER := &B;
+C NUMBER := &C;
+BIG NUMBER;
+BEGIN
+IF (A > B) THEN
+BIG := A;
+ELSE
+BIG := B;
+END IF;
+IF(BIG < C ) THEN
+DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B AND C IS ' || C);
+ELSE
+DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B AND C IS ' || BIG);
+END IF;
+END; /
+Using IF—ELSIF—ELSE
+DECLARE
+A NUMBER := &A;
+B NUMBER := &B;
+C NUMBER := &C;
+BEGIN
+IF (A > B AND A > C) THEN
+DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || A);
+ELSIF (B > C) THEN
+DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || B);
+ELSE
+DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || C);
+END IF;
+END; /
+CASE statement
+CASE selector
+WHEN 'value1' THEN S1;
+WHEN 'value2' THEN S2;
+WHEN 'value3' THEN S3;
+...
+ELSE Sn; -- default case
+END CASE;
+Example
+DECLARE
+grade char(1) := 'A';
+BEGIN
+CASE grade
+when 'A' then dbms_output.put_line('Excellent');
+when 'B' then dbms_output.put_line('Very good');
+when 'C' then dbms_output.put_line('Well done');
+when 'D' then dbms_output.put_line('You passed');
+when 'F' then dbms_output.put_line('Better try again');
+else dbms_output.put_line('No such grade');
+END CASE;
+END; /
+Iterative Control
+This is the ability to repeat or skip sections of a code block. A loop repeats a sequence of statements. You have to place the keyword loop before the first statement in the sequence of statements that you want repeated and the keywords end loop immediately after the last statement in the sequence. Once a loop begins to run, it will go on forever. Hence loops are always accompanied by a conditional statement that keeps control on the number of times the loop is executed.
+You can build user defined exits from a loop, where required.
+THE WHILE LOOP:
+WHILE<condition>
+LOOP <action>
+END LOOP;
+WRITE A PL/SQL PROGRAM TO FINDS SUM OF DIGITS OF A GIVEN NUMBER.
+DECLARE
+n INTEGER;
+temp_sum INTEGER;
+r INTEGER;
+BEGIN
+n := 123456;
+temp_sum := 0;SSS
+WHILE n <> 0 LOOP
+r := MOD(n, 10);
+temp_sum := temp_sum + r;
+n := Trunc(n / 10);
+END LOOP;
+dbms_output.Put_line('sum of digits = '|| temp_sum);
+END;
+Write a PL/SQL program to grade the student according to the following rules Student(name,rollno,mark1,mark2,mark3)
+TOTAL MARKS GRADE
+>=250 Distinction
+180-250 First Class
+120-179 Second Class
+80-119 Third Class
+<80 Fail
+The result should be in the following Format
+STUDENT NAME:
+ROLL NO :
+TOTAL MARKS :
+GRADE :
+Create table Stud(rollno int primary key,name char(10),mark1 float,mark2 float,mark3 float);
+Insert into stud values(&rollno,’&name’,&mark1,&mark2,&mark3);
+ROLLNO NAME MARK1 MARK2 MARK3
+---------- ---------- --------- ---------- ----------
+1 aparna 80 90 78
+2 amritha 90 92 81
+3 binuja 23 18 20
+4 cathy 49 50 50
+5 danish 60 62 61
+6 fayas 76 62 74
+
+
+
+
+
+
+
+
+
+```markdown
+# PL/SQL Control Structures
+
+## Introduction
+Implementation of various control structures like **IF-THEN**, **IF-THEN-ELSE**, **IF-THEN ELSIF**, **CASE**, and **WHILE** using PL/SQL.
+
+Procedural Language/Structured Query Language (PL/SQL) is an extension of SQL.
+
+## Basic Syntax of PL/SQL
+```plsql
+DECLARE
+  /* Variables can be declared here */
+BEGIN
+  /* Executable statements can be written here */
+EXCEPTION
+  /* Error handlers can be written here. */
+END;
+```
+
+To display the output of a PL/SQL program on the screen, use the following command (only once per session):
+```plsql
+SET SERVEROUTPUT ON
+```
+
+## Conditional Control in PL/SQL
+
+In PL/SQL, the **IF** statement allows you to control the execution of a block of code. You can use various conditional control structures.
+
+### IF-THEN-ELSE
+```plsql
+IF (TEST_CONDITION) THEN
+  /* SET OF STATEMENTS */
+ELSE
+  /* SET OF STATEMENTS */
+END IF;
+```
+
+### Nested IF-ELSIF-ELSE
+```plsql
+IF (TEST_CONDITION) THEN
+  /* SET OF STATEMENTS */
+ELSIF (CONDITION)
+  /* SET OF STATEMENTS */
+END IF;
+```
+
+## Example: Find the Largest of Three Numbers
+### Using IF-ELSE
+```plsql
+DECLARE
+  A NUMBER := &A;
+  B NUMBER := &B;
+  C NUMBER := &C;
+  BIG NUMBER;
+BEGIN
+  IF (A > B) THEN
+    BIG := A;
+  ELSE
+    BIG := B;
+  END IF;
+  IF (BIG < C ) THEN
+    DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B AND C IS ' || C);
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B AND C IS ' || BIG);
+  END IF;
+END;
+/
+```
+
+### Using IF-ELSIF-ELSE
+```plsql
+DECLARE
+  A NUMBER := &A;
+  B NUMBER := &B;
+  C NUMBER := &C;
+BEGIN
+  IF (A > B AND A > C) THEN
+    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || A);
+  ELSIF (B > C) THEN
+    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || B);
+  ELSE
+    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || C);
+  END IF;
+END;
+/
+```
+
+## CASE Statement
+```plsql
+CASE selector
+WHEN 'value1' THEN S1;
+WHEN 'value2' THEN S2;
+WHEN 'value3' THEN S3;
+...
+ELSE Sn; -- default case
+END CASE;
+```
+
+### Example
+```plsql
+DECLARE
+  grade CHAR(1) := 'A';
+BEGIN
+  CASE grade
+  WHEN 'A' THEN DBMS_OUTPUT.PUT_LINE('Excellent');
+  WHEN 'B' THEN DBMS_OUTPUT.PUT_LINE('Very good');
+  WHEN 'C' THEN DBMS_OUTPUT.PUT_LINE('Well done');
+  WHEN 'D' THEN DBMS_OUTPUT.PUT_LINE('You passed');
+  WHEN 'F' THEN DBMS_OUTPUT.PUT_LINE('Better try again');
+  ELSE DBMS_OUTPUT.PUT_LINE('No such grade');
+  END CASE;
+END;
+/
+```
+
+## Iterative Control
+
+This is the ability to repeat or skip sections of a code block. A loop repeats a sequence of statements.
+
+### WHILE Loop
+```plsql
+WHILE <condition>
+LOOP
+  <action>
+END LOOP;
+```
+
+### Example: Find the Sum of Digits of a Given Number
+```plsql
+DECLARE
+  n INTEGER;
+  temp_sum INTEGER;
+  r INTEGER;
+BEGIN
+  n := 123456;
+  temp_sum := 0;
+  WHILE n <> 0 LOOP
+    r := MOD(n, 10);
+    temp_sum := temp_sum + r;
+    n := TRUNC(n / 10);
+  END LOOP;
+  DBMS_OUTPUT.PUT_LINE('Sum of digits = ' || temp_sum);
+END;
+```
+
+## Grade Students in PL/SQL
+```plsql
+-- Create a table
+CREATE TABLE Stud(rollno INT PRIMARY KEY, name CHAR(10), mark1 FLOAT, mark2 FLOAT, mark3 FLOAT);
+
+-- Insert values into the table
+INSERT INTO stud VALUES(&rollno, '&name', &mark1, &mark2, &mark3);
+```
+
+### Student Grade Criteria
+- Total Marks >= 250: Distinction
+- 180-250: First Class
+- 120-179: Second Class
+- 80-119: Third Class
+- <80: Fail
+
+The result should be displayed in the following format:
+```
+STUDENT NAME:
+ROLL NO:
+TOTAL MARKS:
+GRADE:
+```
+
+```
+ROLLNO  NAME     MARK1  MARK2  MARK3
+------- -------- ------ ------ ------
+1       aparna   80     90     78
+2       amritha  90     92     81
+3       binuja   23     18     20
+4       cathy    49     50     50
+5       danish   60     62     61
+6       fayas    76     62     74
+```
+```
