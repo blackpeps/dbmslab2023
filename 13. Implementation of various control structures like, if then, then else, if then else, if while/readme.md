@@ -1,6 +1,6 @@
 ## 13. Implementation of various control structures like, if then, then else, if then else, if while
 
-# Decision-Making Statements
+### Decision-Making Statements
 
 Decision-making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.
 
@@ -200,26 +200,45 @@ PL/SQL procedure successfully completed.
 
 ```sql
 SQL> SET SERVEROUTPUT ON
-SQL> DECLARE
-2 SUB1 NUMBER(4):=&NUM1;
-3 SUB2 NUMBER(4):=&NUM2;
-4 SUB3 NUMBER(4):=&NUM3;
-5 TOTAL NUMBER(4):=0;
-6 PER DECIMAL(18,2):=0;
-7 BEGIN
-8 TOTAL:=SUB1+SUB2+SUB3;
-9 DBMS_OUTPUT.PUT_LINE('TOTAL='||TOTAL);
-10 PER:=(TOTAL/300)*100;
-11 DBMS_OUTPUT.PUT_LINE('PERCENTAGE='||PER);
-12 IF PER>=90 THEN
-13 DBMS_OUTPUT.PUT_LINE('GRADE:A');
-14 ELSIF PER>=80 AND PER<90 THEN
-15 DBMS_OUTPUT.PUT_LINE('GRADE:B');
-16 ELSE
-17 DBMS_OUTPUT.PUT_LINE('GRADE:C');
-19 END IF;
-19 END;
-20 /
+SQL>  DECLARE
+  2   SUB1 NUMBER(4):=&NUM1;
+  3   SUB2 NUMBER(4):=&NUM2;
+  4   SUB3 NUMBER(4):=&NUM3;
+  5   TOTAL NUMBER(4):=0;
+  6   PER DECIMAL(18,2):=0;
+  7   BEGIN
+  8   TOTAL:=SUB1+SUB2+SUB3;
+  9   DBMS_OUTPUT.PUT_LINE('TOTAL='||TOTAL);
+ 10   PER:=(TOTAL/300)*100;
+ 11   DBMS_OUTPUT.PUT_LINE('PERCENTAGE='||PER);
+ 12   IF PER>=90 THEN
+ 13   DBMS_OUTPUT.PUT_LINE('GRADE:A');
+ 14   ELSIF PER>=80 AND PER<90 THEN
+ 15   DBMS_OUTPUT.PUT_LINE('GRADE:B');
+ 16   ELSE
+ 17   DBMS_OUTPUT.PUT_LINE('GRADE:C');
+ 18   END IF;
+ 19   END;
+ 20   /
+```
+
+# output
+
+```sql
+Enter value for num1: 80
+old   2:  SUB1 NUMBER(4):=&NUM1;
+new   2:  SUB1 NUMBER(4):=80;
+Enter value for num2: 60
+old   3:  SUB2 NUMBER(4):=&NUM2;
+new   3:  SUB2 NUMBER(4):=60;
+Enter value for num3: 40
+old   4:  SUB3 NUMBER(4):=&NUM3;
+new   4:  SUB3 NUMBER(4):=40;
+TOTAL=180
+PERCENTAGE=60
+GRADE:C
+
+PL/SQL procedure successfully completed.
 ```
 
 ## CASE QUESTION
@@ -346,7 +365,7 @@ SQL> /
 Enter value for num1: 231
 old 2: A NUMBER(5):=&NUM1;
 new 2: A NUMBER(5):=231;
-THE NUMBER IS NOT ARMSRONG
+THE NUMBER IS NOT ARMSTRONG
 PL/SQL procedure successfully completed.
 ```
 
@@ -372,25 +391,33 @@ PL/SQL procedure successfully completed.
 ```sql
 SQL> SET SERVEROUTPUT ON
 SQL> DECLARE
-2 A NUMBER(4):=&LIMIT;
-3 B NUMBER(4):=1;
-4 C NUMBER:=0;
-5 BEGIN
-6 DBMS_OUTPUT.PUT_LINE('THE PRIME NUMBERS ARE:');
-7 FOR B IN 1 ..A
-8 LOOP
-9 C:=0;
-10 FOR I IN 1 ..A
-11 LOOP
-12 IF MOD(B,I)=0 THEN
-13 C:=C+1;
-14 END IF;
-15 END LOOP;
-16 IF C=2 THEN
-17 DBMS_OUTPUT.PUT_LINE(B);
-18 END IF;
-19 END LOOP;
-20 END;
-21 /
-```
+  2   A NUMBER(4):=&LIMIT;
+  3   B NUMBER(4):=1;
+  4   C NUMBER:=0;
+  5   BEGIN
+  6   DBMS_OUTPUT.PUT_LINE('THE PRIME NUMBERS ARE:');
+  7   FOR B IN 1 ..A
+  8   LOOP
+  9   C:=0;
+ 10   FOR I IN 1 ..A
+ 11  LOOP
+ 12   IF MOD(B,I)=0 THEN
+ 13   C:=C+1;
+ 14   END IF;
+ 15   END LOOP;
+ 16   IF C=2 THEN
+ 17   DBMS_OUTPUT.PUT_LINE(B);
+ 18   END IF;
+ 19   END LOOP;
+ 20  END;
+ 21   /
+Enter value for limit: 5
+old   2:  A NUMBER(4):=&LIMIT;
+new   2:  A NUMBER(4):=5;
+THE PRIME NUMBERS ARE:
+2
+3
+5
 
+PL/SQL procedure successfully completed.
+```
