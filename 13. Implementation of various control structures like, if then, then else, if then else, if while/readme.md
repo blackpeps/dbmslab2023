@@ -1,184 +1,5 @@
 ## 13. Implementation of various control structures like, if then, then else, if then else, if while
 
-### Implementation of PL/SQL Control Structures
-
-#### Basic Syntax of PL/SQL
-
-```sql
-DECLARE
-  /* Variables can be declared here */
-BEGIN
-  /* Executable statements can be written here */
-EXCEPTION
-  /* Error handlers can be written here. */
-END;
-```
-
-### Setting Output for PL/SQL Programs
-
-As we want output of the PL/SQL Program on the screen, before starting to write anything, type (Only Once per session):
-```sql
-SET SERVEROUTPUT ON
-```
-
-### Conditional Control in PL/SQL
-
-In PL/SQL, the IF statement allows you to control the execution of a block of code. You can use the IF-THEN-ELSIF-ELSE-END IF statements in code blocks to write specific conditions under which a specific block of code will be executed.
-
-#### Example: PL/SQL to find the addition of two numbers
-
-```sql
-DECLARE
-  A INTEGER := &A;
-  B INTEGER := &B;
-  C INTEGER;
-BEGIN
-  C := A + B;
-  DBMS_OUTPUT.PUT_LINE('THE SUM IS '||C);
-END;
-/
-```
-
-### Decision Making with IF Statement
-
-The general syntax for using IF-ELSE statement is:
-
-```sql
-IF (TEST_CONDITION) THEN
-  SET OF STATEMENTS
-ELSE
-  SET OF STATEMENTS
-END IF;
-```
-For Nested IF-ELSE Statement, you can use IF-ELSIF-ELSE as follows:
-```sql
-IF (TEST_CONDITION) THEN
-  SET OF STATEMENTS
-ELSIF (CONDITION)
-  SET OF STATEMENTS
-END IF;
-```
-#### Example: Finding the Largest of Three Numbers
-
-Using IF-ELSE:
-
-```sql
-DECLARE
-  A NUMBER := &A;
-  B NUMBER := &B;
-  C NUMBER := &C;
-  BIG NUMBER;
-BEGIN
-  IF (A > B) THEN
-    BIG := A;
-  ELSE
-    BIG := B;
-  END IF;
-  IF (BIG < C ) THEN
-    DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B, AND C IS ' || C);
-  ELSE
-    DBMS_OUTPUT.PUT_LINE('BIGGEST OF A, B, AND C IS ' || BIG);
-  END IF;
-END;
-/
-```
-Using IF-ELSIF-ELSE:
-```sql
-DECLARE
-  A NUMBER := &A;
-  B NUMBER := &B;
-  C NUMBER := &C;
-BEGIN
-  IF (A > B AND A > C) THEN
-    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || A);
-  ELSIF (B > C) THEN
-    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || B);
-  ELSE
-    DBMS_OUTPUT.PUT_LINE('BIGGEST IS ' || C);
-  END IF;
-END;
-/
-```
-
-### CASE Statement
-
-```sql
-CASE selector
-WHEN 'value1' THEN S1;
-WHEN 'value2' THEN S2;
-WHEN 'value3' THEN S3;
-...
-ELSE Sn; -- default case
-END CASE;
-```
-#### Example: Grading Students
-
-```sql
-DECLARE
-  grade CHAR(1) := 'A';
-BEGIN
-  CASE grade
-    WHEN 'A' THEN DBMS_OUTPUT.PUT_LINE('Excellent');
-    WHEN 'B' THEN DBMS_OUTPUT.PUT_LINE('Very good');
-    WHEN 'C' THEN DBMS_OUTPUT.PUT_LINE('Well done');
-    WHEN 'D' THEN DBMS_OUTPUT.PUT_LINE('You passed');
-    WHEN 'F' THEN DBMS_OUTPUT.PUT_LINE('Better try again');
-    ELSE DBMS_OUTPUT.PUT_LINE('No such grade');
-  END CASE;
-END;
-/
-```
-
-### Iterative Control
-
-This is the ability to repeat or skip sections of a code block. A loop repeats a sequence of statements. You have to place the keyword LOOP before the first statement in the sequence of statements that you want repeated and the keywords END LOOP immediately after the last statement in the sequence. Once a loop begins to run, it will go on forever. Hence, loops are always accompanied by a conditional statement that keeps control on the number of times the loop is executed.
-
-#### Example: Using a WHILE Loop to Find the Sum of Digits
-
-```sql
-DECLARE
-  n INTEGER;
-  temp_sum INTEGER;
-  r INTEGER;
-BEGIN
-  n := 123456;
-  temp_sum := 0;
-  WHILE n <> 0 LOOP
-    r := MOD(n, 10);
-    temp_sum := temp_sum + r;
-    n := TRUNC(n / 10);
-  END LOOP;
-  DBMS_OUTPUT.PUT_LINE('Sum of digits = ' || temp_sum);
-END;
-```
-
----
-
-### Questions
-
-Write a PL/SQL program to grade the student according to the following rules for a table called Stud(rollno int primary key, name char(10), mark1 float, mark2 float, mark3 float):
-
-- \>=250: Distinction
-- 180-250: First Class
-- 120-179: Second Class
-- 80-119: Third Class
-- <80: Fail
-
-
-**Table:**
-
-| ROLLNO | NAME    | MARK1 | MARK2 | MARK3 |
-| ------ | ------- | ----- | ----- | ----- |
-| 1      | aparna  | 80    | 90    | 78    |
-| 2      | amritha | 90    | 92    | 81    |
-| 3      | binuja  | 23    | 18    | 20    |
-| 4      | cathy   | 49    | 50    | 50    |
-| 5      | danish  | 60    | 62    | 61    |
-| 6      | fayas   | 76    | 62    | 74    |
-
----
-
-
 # Decision-Making Statements
 
 Decision-making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.
@@ -231,6 +52,21 @@ Execute a sequence of statements multiple times and abbreviates the code that ma
 
 Use one or more loops inside any another basic loop, while, or for loop.
 
+
+# Questions
+
+## 1. Write a PL/SQL program to find the sum of two numbers
+
+**ALGORITHM**
+
+1. Start
+2. Enter number A
+3. Enter number B
+4. Compute SUM1 = A+B
+5. Display SUM1
+6. End
+
+
 # Program
 
 ```sql
@@ -259,18 +95,20 @@ THE SUM OF TWO NUMBER IS:50
 PL/SQL procedure successfully completed.
 ```
 
-# Questions
 
-## 1. Write a PL/SQL program to find the sum of two numbers
+## IF-THEN QUESTION
+
+1. Write a PL/SQL program to display whether the given number is zero.
 
 **ALGORITHM**
 
 1. Start
-2. Enter number A
-3. Enter number B
-4. Compute SUM1 = A+B
-5. Display SUM1
+2. Set NUM1=0
+3. Check whether NUM1 is equal to 0
+4. Display the message the number is zero
+5. Display end of the program
 6. End
+
 
 # Program (IF-THEN)
 
@@ -295,18 +133,21 @@ END OF PROGRAM
 PL/SQL procedure successfully completed.
 ```
 
-## IF-THEN QUESTION
 
-1. Write a PL/SQL program to display whether the given number is zero.
+## IF-THEN-ELSE QUESTIONS
+
+1. Write a PL/SQL program to find whether a given number is odd or even.
 
 **ALGORITHM**
 
 1. Start
-2. Set NUM1=0
-3. Check whether NUM1 is equal to 0
-4. Display the message the number is zero
-5. Display end of the program
-6. End
+2. Enter the number to check
+3. If the number is divisible by 2, then the number is Even
+4. Else, the number is odd
+5. Print the output
+6. Stop
+
+
 
 # Program (IF-THEN-ELSE)
 
@@ -341,18 +182,19 @@ THE NUMBER IS ODD
 PL/SQL procedure successfully completed.
 ```
 
-## IF-THEN-ELSE QUESTIONS
+## IF-THEN-ELSEIF QUESTION
 
-1. Write a PL/SQL program to find whether a given number is odd or even.
+1. Write a PL/SQL program to display the grade list of a student.
 
 **ALGORITHM**
 
 1. Start
-2. Enter the number to check
-3. If the number is divisible by 2, then the number is Even
-4. Else, the number is odd
-5. Print the output
-6. Stop
+2. Enter three marks
+3. Calculate total mark and percentage
+4. Check if the percentage is greater than 90, then display grade as A grade
+5. Check if the percentage is greater than 80 and less than 90, then display grade as B
+6. Otherwise, display grade as C grade
+7. Stop
 
 # Program (IF-THEN-ELSEIF)
 
@@ -380,19 +222,17 @@ SQL> DECLARE
 20 /
 ```
 
-## IF-THEN-ELSEIF QUESTION
+## CASE QUESTION
 
-1. Write a PL/SQL program to display the grade list of a student.
+1. Write a PL/SQL program to find the area of geometric shapes using CASE.
 
 **ALGORITHM**
 
 1. Start
-2. Enter three marks
-3. Calculate total mark and percentage
-4. Check if the percentage is greater than 90, then display grade as A grade
-5. Check if the percentage is greater than 80 and less than 90, then display grade as B
-6. Otherwise, display grade as C grade
-7. Stop
+2. Take input for choice and then for area variables from the user
+3. Case 1: Circle: 3.14 * radius * radius Case 2: Triangle: 0.5 * base * height;
+4. Display output according to the case
+5. Stop
 
 ## Program (CASE)
 
@@ -448,17 +288,24 @@ AREA OF CIRCLE IS:12.56
 PL/SQL procedure successfully completed.
 ```
 
-## CASE QUESTION
+## WHILE QUESTION
 
-1. Write a PL/SQL program to find the area of geometric shapes using CASE.
+1. Write a PL/SQL program to check whether the number is an Armstrong number or not.
 
 **ALGORITHM**
 
 1. Start
-2. Take input for choice and then for area variables from the user
-3. Case 1: Circle: 3.14 * radius * radius Case 2: Triangle: 0.5 * base * height;
-4. Display output according to the case
-5. Stop
+2. Read a number from the user
+3. Initialize variables sum1 and D to zero
+4. Set X = A
+5. Repeat until A > 0
+   5.1. Calculate D = MOD(A, 10)
+   5.2. Calculate the sum, sum1 + (D * D * D)
+   5.3. Set A as A / 10
+6. Check whether sum1 is equal to X
+   6.1. If true, display the number is Armstrong
+   6.2. If false, display the number is not an Armstrong
+7. Stop
 
 ## Program (WHILE)
 
@@ -503,24 +350,22 @@ THE NUMBER IS NOT ARMSRONG
 PL/SQL procedure successfully completed.
 ```
 
-## WHILE QUESTION
+## FOR LOOP QUESTION
 
-1. Write a PL/SQL program to check whether the number is an Armstrong number or not.
+1. Write a PL/SQL program to display the prime numbers up to 'n'.
 
 **ALGORITHM**
 
 1. Start
-2. Read a number from the user
-3. Initialize variables sum1 and D to zero
-4. Set X = A
-5. Repeat until A > 0
-   5.1. Calculate D = MOD(A, 10)
-   5.2. Calculate the sum, sum1 + (D * D * D)
-   5.3. Set A as A / 10
-6. Check whether sum1 is equal to X
-   6.1. If true, display the number is Armstrong
-   6.2. If false, display the number is not an Armstrong
-7. Stop
+2. Read the limit
+3. Initialize variables
+4. Repeat loop for B = 1 to limit
+   4.1. Repeat loop for I = 1 to limit
+        a. Check if MOD(B, I) is equal to 0, then set C as C + 1
+   4.2. Check if C is equal to 2, then display prime numbers
+5. Stop
+
+---
 
 ## Program (FOR LOOP)
 
@@ -548,21 +393,4 @@ SQL> DECLARE
 20 END;
 21 /
 ```
-
-## FOR LOOP QUESTION
-
-1. Write a PL/SQL program to display the prime numbers up to 'n'.
-
-**ALGORITHM**
-
-1. Start
-2. Read the limit
-3. Initialize variables
-4. Repeat loop for B = 1 to limit
-   4.1. Repeat loop for I = 1 to limit
-        a. Check if MOD(B, I) is equal to 0, then set C as C + 1
-   4.2. Check if C is equal to 2, then display prime numbers
-5. Stop
-
----
 
