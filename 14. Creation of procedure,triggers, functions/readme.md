@@ -1,7 +1,5 @@
 ## 14. Creation of procedures, triggers, functions
 
-# INCOMPLETE MAY MAKE MODIFICATIONS IN FUTURE, PLEASE BE AWARE BEFORE EXECUTING COMMANDS. YOU MAY GO THROUGH THE THEORY SECTION.
-
 # Procedures
 
 A subprogram is a program unit/module that performs a particular task. These subprograms are combined to form larger programs. This is basically called the 'Modular design'. A subprogram can be invoked by another subprogram or program, which is called the calling program.
@@ -153,10 +151,10 @@ Where:
 
 **Step 4:** Repeat until `VAL != N-2`
 
-    - **4:1** Calculate `C = A + B`
-    - **4:2** Display `C`
-    - **4:3** Perform swapping
-    - **4:4** Set `VAL` as `VAL + 1`
+- **4:1** Calculate `C = A + B`
+- **4:2** Display `C`
+- **4:3** Perform swapping
+- **4:4** Set `VAL` as `VAL + 1`
 
 **Step 5:** Stop
 
