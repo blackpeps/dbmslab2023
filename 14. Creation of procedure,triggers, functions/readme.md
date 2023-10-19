@@ -275,7 +275,7 @@ SQL> CREATE OR REPLACE FUNCTION PMN(N IN NUMBER) RETURN NUMBER
 ```
 # OUTPUT
 
-```
+```sql
 SQL> SET SERVEROUTPUT ON
 SQL> DECLARE
  2 NO NUMBER(5):=&LIMIT;
@@ -283,6 +283,14 @@ SQL> DECLARE
  4 DBMS_OUTPUT.PUT_LINE(NO||'TH PRIME NUMBER IS:'||PMN(NO));
  5 END;
  6 / 
+```
+
+```sql
+Enter value for limit: 10
+old 2: NO NUMBER(5):=&LIMIT;
+new 2: NO NUMBER(5):=10;
+10TH PRIME NUMBER IS:29
+PL/SQL procedure successfully completed.
 ```
 
 ## 3. TRIGGER
