@@ -186,14 +186,12 @@ SQL> CREATE OR REPLACE PROCEDURE FIB(N IN NUMBER)
  21 END;
  22 /
 ```
-
+```
 SQL> SET SERVEROUTPUT ON
-SQL> DECLARE
-2 F NUMBER(5):=&LIMIT;
-3 BEGIN
-4 FIB(F);
-5 END;
-6 /
+SQL> DECLARE F NUMBER(5):=&LIMIT;
+2 BEGIN FIB(F);
+3 END;
+4 /
 OUTPUT
 Enter value for limit: 6
 old 2: F NUMBER(5):=&LIMIT;
@@ -206,7 +204,7 @@ FIBONACCI SERIES IS:
 3
 5
 PL/SQL procedure successfully completed.
-
+```
 ## 2. FUNCTION
 
 ### QUESTION
