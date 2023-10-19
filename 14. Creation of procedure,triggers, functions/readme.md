@@ -208,6 +208,7 @@ FIBONACCI SERIES IS:
 5
 PL/SQL procedure successfully completed.
 ```
+
 ## 2. FUNCTION
 
 ### QUESTION
@@ -218,32 +219,28 @@ PL/SQL procedure successfully completed.
 
 **Step 1:** Start
 
-**Step 2:** Create a trigger for the customer21 table that fires for insert, update, or delete operations to display the salary difference
-
-**Step 3:** Inserting a new employee
-
-**Step 4:** Modify the salary
-
-**Step 5:** Calculate the salary difference
-
-**Step 6:** Display the difference
-
-**Step 7:** Stop
-
-**Step 1:** Start
 **Step 2:** Read a number, NO
+
 **Step 3:** Call function PMN(NO)
+
 **Step 4:** Display Nth prime number
+
 **Step 5:** Stop
 
 *PMN(N)*
 
 **Step 1:** Start
+
 **Step 2:** Initialize P and C as Zero
+
 **Step 3:** Repeat loop until I=100
+
      **3:1** Check if I%J=0 then set C=C+1
+     
      **3:2** If C=2 then set P as P+1
+     
      **3:3** Check if P=N then return i
+     
 **Step 4:** Stop
 
 # PROGRAM
@@ -294,16 +291,18 @@ SQL> DECLARE
 
 1. Create a table customer21 with the following fields.
 
-| ID | NAME | AGE | CITY | DEP | DESG | SAL |
-|----|------|-----|------|-----|------|-----|
-| 7001 | Sethu | 33 | Wayanad | 31 | Developer | 35000 |
-| 9001 | Jaya | 34 | Pandalam | 31 | Designer | 30000 |
-| 10001 | Heeral | 37 | Kollam | 31 | Clerk | 25000 |
-| 10011 | Rimal | 28 | Pala | 31 | Designer | 27000 |
-| 10021 | Janil | 39 | Kottayam | 31 | Tester | 20000 |
-| 10031 | Hari | 40 | TVM | 31 | Manager | 67000 |
+| ID    | NAME   | AGE | CITY      | DEP | DESG      | SAL   |
+|-------|--------|-----|-----------|-----|-----------|-------|
+| 7001  | Sethu  | 33  | Wayanad   | 31  | Developer | 35000 |
+| 9001  | Jaya   | 34  | Pandalam  | 31  | Designer  | 30000 |
+| 10001 | Heeral | 37  | Kollam    | 31  | Clerk     | 25000 |
+| 10011 | Rimal  | 28  | Pala      | 31  | Designer  | 27000 |
+| 10021 | Janil  | 39  | Kottayam  | 31  | Tester    | 20000 |
+| 10031 | Hari   | 40  | TVM       | 31  | Manager   | 67000 |
 
-### 2. Write a PL/SQL program to display the salary difference of an employee in the customer table using a trigger
+## Practise Question
+
+2. Write a PL/SQL program to display the salary difference of an employee in the customer table using a trigger
 
 ### ALGORITHM
 
@@ -351,6 +350,11 @@ SQL> CREATE OR REPLACE TRIGGER DISPLAY_SALARY_CHANGES BEFORE DELETE OR INSERT OR
 10 END;
 11 /
 Trigger created.
+```
+
+# OUTPUT
+
+```sql
 SQL> INSERT INTO CUSTOMER21 VALUES('780','NEERAV',21,'TVM',2,'GM',80000);
 OLD SALARY:
 NEW SALARY: 80000
