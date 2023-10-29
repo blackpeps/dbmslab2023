@@ -1,31 +1,61 @@
 # Introduction to SQL
 
+## Table of Contents
+
+| Sl. No. | Topic                                      | Navigation                             |
+| ------- | ------------------------------------------ | -------------------------------------- |
+| 1       | INTRODUCTION TO SQL                        | [click here](#introduction-to-sql)      |
+| 1.1     | History of SQL                             | [click here](#history-of-sql)           |
+| 1.2     | Rules                                      | [click here](#rules)                    |
+| 1.3     | SQL Process                                | [click here](#sql-process)               |
+| 1.4     | SQL Commands                               | [click here](#sql-commands)              |
+| 1.4.1   | Data Definition Language (DDL)             | [click here](#data-definition-language-ddl) |
+| 1.4.1.1 | CREATE                                    | [click here](#create)                   |
+| 1.4.1.2 | DROP                                      | [click here](#drop)                     |
+| 1.4.1.3 | ALTER                                     | [click here](#alter)                    |
+| 1.4.1.4 | TRUNCATE                                  | [click here](#truncate)                 |
+| 1.4.2   | Data Manipulation Language (DML)          | [click here](#data-manipulation-language-dml) |
+| 1.4.2.1 | INSERT                                   | [click here](#insert)                   |
+| 1.4.2.2 | UPDATE                                   | [click here](#update)                   |
+| 1.4.2.3 | DELETE                                   | [click here](#delete)                   |
+| 1.4.3   | Data Control Language (DCL)               | [click here](#data-control-language-dcl) |
+| 1.4.3.1 | Grant                                    | [click here](#grant)                   |
+| 1.4.3.2 | Revoke                                   | [click here](#revoke)                  |
+| 1.4.4   | Transaction Control Language (TCL)        | [click here](#transaction-control-language-tcl) |
+| 1.4.4.1 | Commit                                  | [click here](#commit)                   |
+| 1.4.4.2 | Rollback                                | [click here](#rollback)                 |
+| 1.4.4.3 | SAVEPOINT                               | [click here](#savepoint)                |
+| 1.4.5   | Data Query Language                        | [click here](#data-query-language)      |
+| 2       | Introduction to MySQL                     | [click here](#introduction-to-mysql)   |
+| 2.1     | History of MySQL                          | [click here](#history-of-mysql)        |
+| 2.2     | MySQL Data Types                          | [click here](#mysql-data-types)        |
+| 2.2.1   | Numeric Data Type                         | [click here](#numeric-data-type)       |
+| 2.2.2   | Date and Time Data Type                   | [click here](#date-and-time-data-type) |
+| 2.2.3   | String Data Types                        | [click here](#string-data-types)       |
+
+
 ---
 
-## Under Maintenance 
-
----
-
-SQL stands for Structured Query Language. SQL is used to create, remove, and alter the database and database objects in a database management system and to store, retrieve, and update the data in a database. SQL is a standard language for creating, accessing, and manipulating database management systems. SQL works for all modern relational database management systems, like SQL Server, Oracle, MySQL, etc.
+SQL, or Structured Query Language, is a standard language for managing databases. It's used to create, modify, and delete database objects, as well as store, retrieve, and update data in various database systems like SQL Server, Oracle, and MySQL.
 
 ## 1. History of SQL
 
-Dr. E. F. Codd published the paper, "A Relational Model of Data for Large Shared Data Banks", in June 1970 in the Association of Computer Machinery (ACM) journal, Communications of the ACM. Codd's model is now accepted as the definitive model for relational database management systems (RDBMS). The language, Structured English Query Language (SEQUEL), was developed by IBM Corporation, Inc., to use Codd's model. SEQUEL later became SQL (still pronounced "sequel"). In 1979, Relational Software, Inc. (now Oracle) introduced the first commercially available implementation of SQL. Today, SQL is accepted as the standard RDBMS language.
+Dr. E. F. Codd's 1970 ACM paper introduced the relational model, now the foundation for RDBMS. IBM developed Structured English Query Language (SEQUEL), later known as SQL. In 1979, Oracle (formerly Relational Software, Inc.) released the first commercial SQL. Today, SQL is the standard RDBMS language.
 
 ## 2. Rules
 
 SQL follows the following rules:
 
-- Structure query language is not case-sensitive. Generally, keywords of SQL are written in uppercase.
-- Statements of SQL are dependent on text lines. We can use a single SQL statement on one or multiple text lines.
-- Using the SQL statements, you can perform most of the actions in a database.
-- SQL depends on tuple relational calculus and relational algebra.
+1. Not case-sensitive, keywords often in uppercase.
+2. Statements can span multiple lines.
+3. Enables diverse database actions.
+4. Based on tuple relational calculus and relational algebra.
 
 ## 3. SQL Process
 
-- When an SQL command is executing for any RDBMS, the system figures out the best way to carry out the request, and the SQL engine determines how to interpret the task.
-- In the process, various components are included. These components can be the optimization engine, query engine, query dispatcher, classic, etc.
-- All the non-SQL queries are handled by the classic query engine, but the SQL query engine won't handle logical files.
+- SQL command execution involves system optimization.
+- Components like optimization engine, query engine, and more are involved.
+- Classic query engine handles non-SQL queries; SQL engine excludes logical files.
 
 ## 4. SQL Commands
 
@@ -33,7 +63,7 @@ SQL commands are instructions used to communicate with the database and perform 
 
 ### 4.1. Data Definition Language (DDL)
 
-DDL changes the structure of the table, including creating, deleting, and altering tables. All the commands of DDL are auto-committed, meaning they permanently save all the changes in the database.
+DDL: Alters table structure (create, delete, modify). Auto-commits, permanently affecting the database.
 
 #### 4.1.a. CREATE
 
@@ -99,13 +129,16 @@ TRUNCATE TABLE EMPLOYEE;
 
 ### 4.2. Data Manipulation Language (DML)
 
-DML commands are used to modify the database and are responsible for all forms of changes in the database. The command of DML is not auto-committed, meaning it can't permanently save all the changes in the database and can be rolled back.
+DML modifies the database but doesn't auto-commit, allowing for rollback.
 
 #### 4.2.a. INSERT
 
 The `INSERT` statement is used to insert data into a table.
 
 Syntax:
+
+*To insert values into the specified column.*
+
 ```sql
 INSERT INTO TABLE_NAME (col1, col2, col3,.... colN) VALUES (value1, value2, value3, ... . valueN);
 ```
@@ -113,6 +146,17 @@ INSERT INTO TABLE_NAME (col1, col2, col3,.... colN) VALUES (value1, value2, valu
 Example:
 ```sql
 INSERT INTO testtable (Author, Subject) VALUES ("Sonoo", "DBMS");
+```
+
+*To insert values into all columns that exist during table creation*
+
+```sql
+INSERT INTO TABLE_NAME VALUES (value1, valeu2, ... , valueN);
+```
+
+Example:
+```sql
+INSERT INTO testtable VALUES ("Sonoo", "DBMS", 54, 9876543210);
 ```
 
 #### 4.2.b. UPDATE
@@ -167,7 +211,7 @@ REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;
 
 ### 4.4. Transaction Control Language (TCL)
 
-TCL commands can only be used with DML commands like INSERT, DELETE, and UPDATE. These operations are automatically committed to the database, which is why they cannot be used while creating or dropping tables.
+TCL works only with DML (INSERT, DELETE, UPDATE), and auto-commits changes, not for table creation or deletion.
 
 #### 4.4.a. Commit
 
@@ -201,7 +245,7 @@ ROLLBACK;
 
 #### 4.4.c. SAVEPOINT
 
-Not applicable for DCL commands.
+Not applicable to DCL commands.
 
 ### 4.5. Data Query Language
 
@@ -225,32 +269,30 @@ SELECT emp_name FROM employee WHERE age > 20;
 
 # Introduction to MySQL
 
-MySQL is a very popular open-source relational database management system (RDBMS). MySQL is a relational database
-
- management system based on the Structured Query Language, which is the popular language for accessing and managing records in the database. MySQL is open-source and free software under the GNU license and is supported by Oracle Company.
+MySQL is a popular open-source relational database management system (RDBMS) based on SQL, GNU-licensed, and supported by Oracle.
 
 ## 1. History of MySQL
 
-The project of MySQL was started in 1979 when MySQL's inventor Michael Widenius developed an in-house database tool called UNIREG for managing databases. After that, UNIREG has been rewritten in several different languages and extended to handle big databases. After some time, Michael Widenius contacted David Hughes, the author of mSQL, to see if Hughes would be interested in connecting mSQL to UNIREG's B+ ISAM handler to provide indexing to mSQL. That's the way MySQL came into existence.
+MySQL began in 1979 as UNIREG, an in-house database tool by Michael Widenius. It evolved, and Widenius collaborated with the author of mSQL David Hughes to create MySQL.
 
 MySQL is becoming popular because:
 
-- MySQL is an open-source database, so you don't have to pay a single penny to use it.
-- MySQL is a powerful program that can handle a large set of functionality of the most expensive and powerful database packages.
-- MySQL is customizable because it is an open-source database, and the open-source GPL license facilitates programmers to modify the SQL software according to their own specific environment.
-- MySQL is quicker than other databases and can work well even with large datasets.
-- MySQL supports many operating systems and languages.
-- MySQL uses a standard form of the well-known SQL data language.
-- MySQL is very friendly with PHP, the most popular language for web development.
-- MySQL supports large databases, up to 50 million rows or more in a table. The default file size limit for a table is 4GB, but you can increase this to a theoretical limit of 8 million terabytes (TB).
+1. Free and open-source.
+2. Handles extensive functionality.
+3. Customizable due to GPL license.
+4. Speed with large datasets.
+5. Supports multiple systems and languages.
+6. Standard SQL language.
+7. Ideal for PHP web development.
+8. Handles large databases, up to millions of rows.
 
 ## 2. MySQL Data Types
 
-MySQL supports various data types, including numeric, date and time, and string types. These data types are used for defining the columns in database tables.
+MySQL supports numeric, date/time, and string data types for defining table columns.
 
 ### 2.1. Numeric Data Type
 
-MySQL has essential SQL numeric data types, both exact (e.g., integer, decimal) and approximate (e.g., float, double). It also supports the `BIT` data type to store bit values. Numeric data types can be signed or unsigned.
+MySQL supports essential SQL numeric data types (exact and approximate), including `BIT` for bit values, and they can be signed or unsigned.
 
 | Data Type | Description                       |
 |-----------|-----------------------------------|
@@ -259,10 +301,10 @@ MySQL has essential SQL numeric data types, both exact (e.g., integer, decimal) 
 | MEDIUMINT | Medium-sized integer, 3 bytes storage |
 | INT       | Normal-sized integer, 4 bytes storage |
 | BIGINT    | Large integer, 8 bytes storage   |
-| FLOAT(m,d) | Floating-point number, 4 bytes storage |
-| DOUBLE(m,d) | Double-precision floating-point number, 8 bytes storage |
-| DECIMAL(m,d) | Unpacked floating-point number |
-| BIT(m)    | Used for storing bit values      |
+| FLOAT(m,d) | Floating-point number (can't be unsigned), 4 bytes storage. Can define display length (m) and number of decimals(d) |
+| DOUBLE(m,d) | Double-precision floating-point number (can't be unsigned), 8 bytes storage |
+| DECIMAL(m,d) | Unpacked floating-point number (can't be unsigned). The synonym is Numeric. |
+| BIT(m)    | Used for storing bit values. M determines the number of bits per value      |
 | BOOL      | Used for true and false conditions (1 for true, 0 for false) |
 | BOOLEAN   | Similar to BOOL                  |
 
@@ -270,9 +312,11 @@ MySQL has essential SQL numeric data types, both exact (e.g., integer, decimal) 
 
 MySQL supports date and time data types to represent temporal values.
 
+> While writing fair records, you can skip the Maximum Size Column altogether.
+
 | Data Type | Maximum Size            | Explanation                                |
 |-----------|-------------------------|--------------------------------------------|
-| YEAR[(2,4)] | 2 or 4 digits        | Year value as 2 or 4 digits                 |
+| YEAR[(2|4)] | 2 or 4 digits        | Year value as 2 or 4 digits                 |
 | DATE      | '1000-01-01' to '9999-12-31' | Date values in 'yyyy-mm-dd' format   |
 | TIME      | '-838:59:59' to '838:59:59' | Time values in 'HH:MM:SS' format    |
 | DATETIME  | '1000-01-01 00:00:00' to '9999-12-31 23:59:59' | Datetime values in 'yyyy-mm-dd hh:mm:ss' format |
@@ -280,55 +324,19 @@ MySQL supports date and time data types to represent temporal values.
 
 ### 2.3. String Data Types
 
-MySQL string data types are used to hold plain text and binary data. These data types include `CHAR`, `VARCHAR`, `TINYTEXT`, `TEXT`, `MEDIUMTEXT`, `LONGTEXT`, `BINARY`, `VARBINARY`, `ENUM`, and `SET`.
+MySQL string data types are used to hold plain text and binary data.
+
+> While writing fair records, you can skip the Maximum Size Column altogether.
 
 | Data Type | Maximum Size    | Explanation                   |
 |-----------|-----------------|-------------------------------|
-| CHAR(size)   | Up to 255 characters | Fixed-length strings, space-padded on the right to equal size characters |
+| CHAR(size)   | Up to 255 characters | Fixed-length strings, space-padded on the right to equal-size characters |
 | VARCHAR(size) | Up to 255 characters | Variable-length strings |
 | TINYTEXT(size) | Up to 255 characters | Maximum size of 255 characters |
 | TEXT(size)    | Up to 65,535 characters | Maximum size of 65,535 characters |
 | MEDIUMTEXT(size) | Up to 16,777,215 characters | Maximum size of 16,777,215 characters |
 | LONGTEXT(size) | Up to 4GB or 4,294,967,295 characters | Maximum size of 4GB or 4,294,967,295 characters |
-| BINARY(size)   | Up to 255 characters | Fixed-length strings, space-padded on the right to equal size characters |
+| BINARY(size)   | Up to 255 characters | Fixed-length strings, space-padded on the right to equal-size characters |
 | VARBINARY(size) | Up to 255 characters | Variable-length strings |
 | ENUM | Up to 65,535 values | Enumeration type, stores one of the specified values |
 | SET  | Up to 64 members | Stores zero or more string values from a predefined list |
-
-This structured information can be used in a markdown file for GitHub with a table of contents for quick navigation.
-
-
-# Table of Contents
-
-- [INTRODUCTION TO SQL](#introduction-to-sql)
-  1. [History of SQL](#history-of-sql)
-  2. [Rules](#rules)
-  3. [SQL Process](#sql-process)
-  4. [SQL Commands](#sql-commands)
-    1. [Data Definition Language (DDL)](#data-definition-language-ddl)
-      - [CREATE](#create)
-      - [DROP](#drop)
-      - [ALTER](#alter)
-      - [TRUNCATE](#truncate)
-    2. [Data Manipulation Language (DML)](#data-manipulation-language-dml)
-      - [INSERT](#insert)
-      - [UPDATE](#update)
-      - [DELETE](#delete)
-    3. [Data Control Language (DCL)](#data-control-language-dcl)
-      - [Grant](#grant)
-      - [Revoke](#revoke)
-    4. [Transaction Control Language (TCL)](#transaction-control-language-tcl)
-      - [Commit](#commit)
-      - [Rollback](#rollback)
-      - [SAVEPOINT](#savepoint)
-    5. [Data Query Language](#data-query-language)
-      - [SELECT](#select)
-
-- [Introduction to MySQL](#introduction-to-mysql)
-  1. [History of MySQL](#history-of-mysql)
-  2. [MySQL Data Types](#mysql-data-types)
-    1. [Numeric Data Type](#numeric-data-type)
-    2. [Date and Time Data Type](#date-and-time-data-type)
-    3. [String Data Types](#string-data-types)
-
----
