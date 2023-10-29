@@ -4,7 +4,7 @@
 
 | Experiment                                                                                                                                                                                                                                | Date          |
 | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- |
-| 1. [ Introduction to ER diagram and SQL](/01.%20Introduction%20to%20ER%20diagram%20and%20SQL/)                                                                                                                                            | 10-08-2023    |
+| 1. [ Introduction to ER diagram](/01.%20Introduction%20to%20ER%20diagram%20and%20SQL/)                                                                                                                                            | 10-08-2023    |
 | 2. [ UNIVERSITY MANAGEMENT SYSTEM ER DIAGRAM](/02.%20UNIVERSITY%20MANAGEMENT%20SYSTEM%20ER%20DIAGRAM/)                                                                                                                                    | 10-08-2023    |
 | 3. [ INTRODUCTION TO SQL](/03.%20INTRODUCTION%20TO%20SQL/)                                                                                                                                                                                | 10-08-2023    |
 | 4. [ Creation, modification, configuration and deletion command ](/04.%20Creation,%20modification,%20configuration%20and%20deletion%20command/)                                                                                           | 17-08-2023    |
