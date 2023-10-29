@@ -1,4 +1,6 @@
-## 04. Creation, modification, configuration and deletion command.
+# 04. Creation, modification, configuration and deletion command.
+
+
 
 ### Create Database
 
@@ -21,7 +23,7 @@ create table table_name (
 alter table table_name modify column_name datatype(size);
 ```
 
-_Note:_ **_If you are getting error, use the following command as an alternative:_**
+_Note:_ **_If you are getting an error, use the following command as an alternative:_**
 
 ```
 alter table table_name change old_column_name new_column_name datatype(size);
