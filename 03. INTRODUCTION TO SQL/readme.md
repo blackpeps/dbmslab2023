@@ -5,7 +5,7 @@
 | Sl. No. | Topic                                      | Navigation                             |
 | ------- | ------------------------------------------ | -------------------------------------- |
 | 1       | INTRODUCTION TO SQL                        | [click here](#introduction-to-sql)      |
-| 1.1     | History of SQL                             | [click here](##history-of-sql)           |
+| 1.1     | History of SQL                             | [click here](#1.-history-of-sql)           |
 | 1.2     | Rules                                      | [click here](#rules)                    |
 | 1.3     | SQL Process                                | [click here](#sql-process)               |
 | 1.4     | SQL Commands                               | [click here](#sql-commands)              |
@@ -33,8 +33,9 @@
 | 2.2.2   | Date and Time Data Type                   | [click here](#date-and-time-data-type) |
 | 2.2.3   | String Data Types                        | [click here](#string-data-types)       |
 
-
 ---
+
+## Introduction
 
 SQL, or Structured Query Language, is a standard language for managing databases. It's used to create, modify, and delete database objects, as well as store, retrieve, and update data in various database systems like SQL Server, Oracle, and MySQL.
 
