@@ -322,7 +322,7 @@ MySQL supports date and time data types to represent temporal values.
 
 | Data Type | Maximum Size            | Explanation                                |
 |-----------|-------------------------|--------------------------------------------|
-| YEAR[(2|4)] | 2 or 4 digits        | Year value as 2 or 4 digits                 |
+| YEAR[(2\|4)] | 2 or 4 digits        | Year value as 2 or 4 digits                 |
 | DATE      | '1000-01-01' to '9999-12-31' | Date values in 'yyyy-mm-dd' format   |
 | TIME      | '-838:59:59' to '838:59:59' | Time values in 'HH:MM:SS' format    |
 | DATETIME  | '1000-01-01 00:00:00' to '9999-12-31 23:59:59' | Datetime values in 'yyyy-mm-dd hh:mm:ss' format |
