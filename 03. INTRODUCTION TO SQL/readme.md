@@ -1,5 +1,7 @@
 # Introduction to SQL
 
+<!--
+
 ## Table of Contents
 
 | Sl. No. | Topic                                      | Navigation                             |
@@ -9,19 +11,19 @@
 | 1.2     | Rules                                      | [click here](#2-rules)                    |
 | 1.3     | SQL Process                                | [click here](#3-sql-process)               |
 | 1.4     | SQL Commands                               | [click here](#4-sql-commands)              |
-| 1.4.1   | Data Definition Language (DDL)             | [click here](#4-1-data-definition-language-ddl) |
+| 1.4.1   | Data Definition Language (DDL)             | [click here](#4-1-data-definition-language) |
 | 1.4.1.1 | CREATE                                    | [click here](#4-1-a-create)                   |
 | 1.4.1.2 | DROP                                      | [click here](#4-1-b-drop)                     |
 | 1.4.1.3 | ALTER                                     | [click here](#4-1-c-alter)                    |
 | 1.4.1.4 | TRUNCATE                                  | [click here](#4-1-d-truncate)                 |
-| 1.4.2   | Data Manipulation Language (DML)          | [click here](#4-2-data-manipulation-language-dml) |
+| 1.4.2   | Data Manipulation Language (DML)          | [click here](#4-2-data-manipulation-language) |
 | 1.4.2.1 | INSERT                                   | [click here](#4-2-a-insert)                   |
 | 1.4.2.2 | UPDATE                                   | [click here](#4-2-b-update)                   |
 | 1.4.2.3 | DELETE                                   | [click here](#4-2-c-delete)                   |
-| 1.4.3   | Data Control Language (DCL)               | [click here](#4-3-data-control-language-dcl) |
+| 1.4.3   | Data Control Language (DCL)               | [click here](#4-3-data-control-language) |
 | 1.4.3.1 | Grant                                    | [click here](#4-3-a-grant)                   |
 | 1.4.3.2 | Revoke                                   | [click here](#4-3-b-revoke)                  |
-| 1.4.4   | Transaction Control Language (TCL)        | [click here](#4-4-transaction-control-language-tcl) |
+| 1.4.4   | Transaction Control Language (TCL)        | [click here](#4-4-transaction-control-language) |
 | 1.4.4.1 | Commit                                  | [click here](#4-4-a-commit)                   |
 | 1.4.4.2 | Rollback                                | [click here](#4-4-b-rollback)                 |
 | 1.4.4.3 | SAVEPOINT                               | [click here](#4-4-c-savepoint)                |
@@ -35,6 +37,8 @@
 | 2.2.3   | String Data Types                        | [click here](#2-3-string-data-types)       |
 
 ---
+
+-->
 
 ## Introduction
 
@@ -63,7 +67,7 @@ SQL follows the following rules:
 
 SQL commands are instructions used to communicate with the database and perform specific tasks, functions, and data queries.
 
-### 4.1. Data Definition Language (DDL)
+### 4.1. Data Definition Language
 
 DDL: Alters table structure (create, delete, modify). Auto-commits, permanently affecting the database.
 
@@ -129,7 +133,7 @@ Example:
 TRUNCATE TABLE EMPLOYEE;
 ```
 
-### 4.2. Data Manipulation Language (DML)
+### 4.2. Data Manipulation Language
 
 DML modifies the database but doesn't auto-commit, allowing for rollback.
 
@@ -189,7 +193,7 @@ Example:
 DELETE FROM testtable WHERE Author="Sonoo";
 ```
 
-### 4.3. Data Control Language (DCL)
+### 4.3. Data Control Language
 
 DCL commands are used to grant and take back authority from any database user.
 
@@ -211,7 +215,7 @@ Example:
 REVOKE SELECT, UPDATE ON MY_TABLE FROM USER1, USER2;
 ```
 
-### 4.4. Transaction Control Language (TCL)
+### 4.4. Transaction Control Language
 
 TCL works only with DML (INSERT, DELETE, UPDATE), and auto-commits changes, not for table creation or deletion.
 
