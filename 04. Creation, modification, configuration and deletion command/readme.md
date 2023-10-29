@@ -3,8 +3,17 @@
 ## Notes
 
 - All the writings in this file should be written on the right side of the fair record **unless specified not to write**.
-- The PDF for the left side of the fair record will be updated soon. Till then, leave pages to paste, by estimating the space required using the output provided.
-- **OUTPUT SHOULD NOT BE WRITTEN ON THE FAIR RECORD**, unless you are crazy and does have lot of time to waste.
+- The PDF for the left side of the fair record can be downloaded from the link given below. Leave pages to paste them by estimating the space required.
+- **OUTPUT SHOULD NOT BE WRITTEN ON THE FAIR RECORD**, unless you are crazy and do have lot of time to waste.
+
+### PDF for the Left Side of the fair record
+
+| [Download Now](https://github.com/blackpeps/dbmslab2023/files/13197951/EXP04.pdf) |
+| --- |
+
+> Any number of variations made to the PDF will be updated in this link.
+
+> **I'm not responsible for you getting an older revision of the PDF through WhatsApp or any other sources.**
 
 ---
 
