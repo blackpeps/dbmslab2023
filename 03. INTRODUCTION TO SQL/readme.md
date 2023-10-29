@@ -6,32 +6,33 @@
 | ------- | ------------------------------------------ | -------------------------------------- |
 | 1       | INTRODUCTION TO SQL                        | [click here](#introduction-to-sql)      |
 | 1.1     | History of SQL                             | [click here](#1-history-of-sql)           |
-| 1.2     | Rules                                      | [click here](#rules)                    |
-| 1.3     | SQL Process                                | [click here](#sql-process)               |
-| 1.4     | SQL Commands                               | [click here](#sql-commands)              |
-| 1.4.1   | Data Definition Language (DDL)             | [click here](#data-definition-language-ddl) |
-| 1.4.1.1 | CREATE                                    | [click here](#create)                   |
-| 1.4.1.2 | DROP                                      | [click here](#drop)                     |
-| 1.4.1.3 | ALTER                                     | [click here](#alter)                    |
-| 1.4.1.4 | TRUNCATE                                  | [click here](#truncate)                 |
-| 1.4.2   | Data Manipulation Language (DML)          | [click here](#data-manipulation-language-dml) |
-| 1.4.2.1 | INSERT                                   | [click here](#insert)                   |
-| 1.4.2.2 | UPDATE                                   | [click here](#update)                   |
-| 1.4.2.3 | DELETE                                   | [click here](#delete)                   |
-| 1.4.3   | Data Control Language (DCL)               | [click here](#data-control-language-dcl) |
-| 1.4.3.1 | Grant                                    | [click here](#grant)                   |
-| 1.4.3.2 | Revoke                                   | [click here](#revoke)                  |
-| 1.4.4   | Transaction Control Language (TCL)        | [click here](#transaction-control-language-tcl) |
-| 1.4.4.1 | Commit                                  | [click here](#commit)                   |
-| 1.4.4.2 | Rollback                                | [click here](#rollback)                 |
-| 1.4.4.3 | SAVEPOINT                               | [click here](#savepoint)                |
-| 1.4.5   | Data Query Language                        | [click here](#data-query-language)      |
+| 1.2     | Rules                                      | [click here](#2-rules)                    |
+| 1.3     | SQL Process                                | [click here](#3-sql-process)               |
+| 1.4     | SQL Commands                               | [click here](#4-sql-commands)              |
+| 1.4.1   | Data Definition Language (DDL)             | [click here](#4-1-data-definition-language-ddl) |
+| 1.4.1.1 | CREATE                                    | [click here](#4-1-a-create)                   |
+| 1.4.1.2 | DROP                                      | [click here](#4-1-b-drop)                     |
+| 1.4.1.3 | ALTER                                     | [click here](#4-1-c-alter)                    |
+| 1.4.1.4 | TRUNCATE                                  | [click here](#4-1-d-truncate)                 |
+| 1.4.2   | Data Manipulation Language (DML)          | [click here](#4-2-data-manipulation-language-dml) |
+| 1.4.2.1 | INSERT                                   | [click here](#4-2-a-insert)                   |
+| 1.4.2.2 | UPDATE                                   | [click here](#4-2-b-update)                   |
+| 1.4.2.3 | DELETE                                   | [click here](#4-2-c-delete)                   |
+| 1.4.3   | Data Control Language (DCL)               | [click here](#4-3-data-control-language-dcl) |
+| 1.4.3.1 | Grant                                    | [click here](#4-3-a-grant)                   |
+| 1.4.3.2 | Revoke                                   | [click here](#4-3-b-revoke)                  |
+| 1.4.4   | Transaction Control Language (TCL)        | [click here](#4-4-transaction-control-language-tcl) |
+| 1.4.4.1 | Commit                                  | [click here](#4-4-a-commit)                   |
+| 1.4.4.2 | Rollback                                | [click here](#4-4-b-rollback)                 |
+| 1.4.4.3 | SAVEPOINT                               | [click here](#4-4-c-savepoint)                |
+| 1.4.5   | Data Query Language                        | [click here](#4-5-data-query-language)      |
+| 1.4.5.1 | Select                                  | [click here](#4-5-a-select)
 | 2       | Introduction to MySQL                     | [click here](#introduction-to-mysql)   |
-| 2.1     | History of MySQL                          | [click here](#history-of-mysql)        |
-| 2.2     | MySQL Data Types                          | [click here](#mysql-data-types)        |
-| 2.2.1   | Numeric Data Type                         | [click here](#numeric-data-type)       |
-| 2.2.2   | Date and Time Data Type                   | [click here](#date-and-time-data-type) |
-| 2.2.3   | String Data Types                        | [click here](#string-data-types)       |
+| 2.1     | History of MySQL                          | [click here](#1-history-of-mysql)        |
+| 2.2     | MySQL Data Types                          | [click here](#2-mysql-data-types)        |
+| 2.2.1   | Numeric Data Type                         | [click here](#2-1-numeric-data-type)       |
+| 2.2.2   | Date and Time Data Type                   | [click here](#2-2-date-and-time-data-type) |
+| 2.2.3   | String Data Types                        | [click here](#2-3-string-data-types)       |
 
 ---
 
