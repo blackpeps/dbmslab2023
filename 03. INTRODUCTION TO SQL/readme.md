@@ -1,5 +1,12 @@
 # Introduction to SQL
 
+## Point to be noted while writing this experiment in the record
+
+- Theories on the right side. (This will be mentioned at the beginning of the topic.)
+- Tables on the **RIGHT** side itself.
+- Headings should be given as it is, below.
+- **AIM, OUTPUT AND RESULT** IS *NOT PRESENT* IN THIS EXPERIMENT.
+
 <!--
 
 ## Table of Contents
@@ -42,13 +49,19 @@
 
 ## Introduction
 
+> Right Side
+
 SQL, or Structured Query Language, is a standard language for managing databases. It's used to create, modify, and delete database objects, as well as store, retrieve, and update data in various database systems like SQL Server, Oracle, and MySQL.
 
 ## 1. History of SQL
 
+> Right Side
+
 Dr. E. F. Codd's 1970 ACM paper introduced the relational model, now the foundation for RDBMS. IBM developed Structured English Query Language (SEQUEL), later known as SQL. In 1979, Oracle (formerly Relational Software, Inc.) released the first commercial SQL. Today, SQL is the standard RDBMS language.
 
 ## 2. Rules
+
+> Right Side
 
 SQL follows the following rules:
 
@@ -59,11 +72,15 @@ SQL follows the following rules:
 
 ## 3. SQL Process
 
+> Right Side
+
 - SQL command execution involves system optimization.
 - Components like optimization engine, query engine, and more are involved.
 - Classic query engine handles non-SQL queries; SQL engine excludes logical files.
 
 ## 4. SQL Commands
+
+> Right Side
 
 SQL commands are instructions used to communicate with the database and perform specific tasks, functions, and data queries.
 
@@ -275,9 +292,13 @@ SELECT emp_name FROM employee WHERE age > 20;
 
 # Introduction to MySQL
 
+> Right Side
+
 MySQL is a popular open-source relational database management system (RDBMS) based on SQL, GNU-licensed, and supported by Oracle.
 
 ## 1. History of MySQL
+
+> Right Side
 
 MySQL began in 1979 as UNIREG, an in-house database tool by Michael Widenius. It evolved, and Widenius collaborated with the author of mSQL David Hughes to create MySQL.
 
@@ -294,11 +315,15 @@ MySQL is becoming popular because:
 
 ## 2. MySQL Data Types
 
+> Right Side
+
 MySQL supports numeric, date/time, and string data types for defining table columns.
 
 ### 2.1. Numeric Data Type
 
 MySQL supports essential SQL numeric data types (exact and approximate), including `BIT` for bit values, and they can be signed or unsigned.
+
+> Right Side
 
 | Data Type | Description                       |
 |-----------|-----------------------------------|
@@ -318,6 +343,8 @@ MySQL supports essential SQL numeric data types (exact and approximate), includi
 
 MySQL supports date and time data types to represent temporal values.
 
+> Right Side
+
 > While writing fair records, you can skip the Maximum Size Column altogether.
 
 | Data Type | Maximum Size            | Explanation                                |
@@ -331,6 +358,8 @@ MySQL supports date and time data types to represent temporal values.
 ### 2.3. String Data Types
 
 MySQL string data types are used to hold plain text and binary data.
+
+> Right Side
 
 > While writing fair records, you can skip the Maximum Size Column altogether.
 
