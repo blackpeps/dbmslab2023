@@ -4,7 +4,7 @@
 
 - All the writings in this file should be written on the right side of the fair record **unless specified not to write**.
 - The PDF for the left side of the fair record can be downloaded from the link given below. Leave pages to paste them by estimating the space required.
-- **OUTPUT SHOULD NOT BE WRITTEN ON THE FAIR RECORD**, unless you are crazy and do have lot of time to waste.
+- **OUTPUT SHOULD NOT BE WRITTEN ON THE FAIR RECORD**, unless you are crazy and do have a lot of time to waste.
 
 ### PDF for the Left Side of the fair record
 
@@ -19,9 +19,13 @@
 
 ## AIM
 
+> Right Side
+
 To create, modify, configure and delete the database using DDL commands
 
 ## Thoery
+
+> Right Side
 
 ### Create Database
 
@@ -68,6 +72,8 @@ drop table table_name;
 
 ## QUESTIONS
 
+> Right Side
+
 1. Create a table STUDENT.
 2. Add the column email ID to the table.
 3. Show the structure of the table STUDENT.
@@ -76,6 +82,8 @@ drop table table_name;
 6. Drop the table STUDENT.
 
 ## OUTPUT
+
+> Left Side (**NO NEED TO WRITE**)
 
 ```sql
 mysql> create database exp004;
@@ -213,4 +221,7 @@ Empty set (0.00 sec)
 ```
 
 ## RESULT
-Query to create, modify, configure and delete database using DDL commands has executed successfully and the output obtained
+
+> Right Side
+
+Query to create, modify, configure and delete the database using DDL commands has executed successfully and the output obtained
