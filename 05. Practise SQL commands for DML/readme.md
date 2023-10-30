@@ -19,9 +19,13 @@
 
 ## AIM
 
+> Right Side
+
 To familiarize different SQL commands.
 
 ## QUESTIONS
+
+> Right Side
 
 1. Create a table EMPLOYEE.
 2. Add the column 'experience' to the table EMPLOYEE.
@@ -46,6 +50,8 @@ To familiarize different SQL commands.
 21. Display the distinct employee name from the table EMPLOYEE.
 
 ## OUTPUT
+
+> Left Side (**NO NEED TO WRITE**)
 
 ```
 mysql> create database exp005;
@@ -392,5 +398,7 @@ mysql> SELECT DISTINCT EMPNAME FROM EMPLYOEE_2023;
 ```
 
 ## RESULT
+
+> Right Side
 
 Queries To implement SQL commands for DML has executed successfully and output obtained.
