@@ -68,14 +68,21 @@ Jane Smith
 Mike Johnson
          3      70000
 
+```
 
+```sql
+SQL> SET SERVEROUTPUT ON
+```
+
+```sql
 SQL> CREATE OR REPLACE PACKAGE EmployeePackage AS
   2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
   3  END EmployeePackage;
   4  /
 
 Package created.
-
+```
+```sql
 SQL> CREATE OR REPLACE PACKAGE BODY EmployeePackage AS
   2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER IS
   3          v_salary NUMBER;
@@ -90,7 +97,8 @@ SQL> CREATE OR REPLACE PACKAGE BODY EmployeePackage AS
  12  /
 
 Package body created.
-
+```
+```sql
 SQL> DECLARE
   2      v_employeeId NUMBER := 1; -- Provide the employee id here
   3      v_salary NUMBER;
@@ -101,14 +109,16 @@ SQL> DECLARE
   8  /
 
 PL/SQL procedure successfully completed.
-
+```
+```sql
 SQL> CREATE OR REPLACE PACKAGE EmployePackage AS
   2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
   3  END EmployePackage;
   4  /
 
 Package created.
-
+```
+```sql
 SQL> CREATE OR REPLACE PACKAGE BODY EmployePackage AS
   2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER IS
   3          v_salary NUMBER;
@@ -123,8 +133,8 @@ SQL> CREATE OR REPLACE PACKAGE BODY EmployePackage AS
  12  /
 
 Package body created.
-
-SQL> SET SERVEROUTPUT ON
+```
+```sql
 SQL> DECLARE
   2      v_employeeId NUMBER := 1; -- Provide the employee id here
   3      v_salary NUMBER;
