@@ -53,35 +53,92 @@ Step 4: Stop
 ## PROGRAM
 
 ```sql
-SQL> CREATE PACKAGE CUSTOMER_SAL AS PROCEDURE FIND_SALARY(C_ID CUSTOMER21.ID%TYPE);
-2 END CUSTOMER_SAL;
-3 /
+SQL> select*from customer;
+
+NAME
+--------------------------------------------------------------------------------
+        ID     SALARY
+---------- ----------
+John Doe
+         1      50000
+
+Jane Smith
+         2      60000
+
+Mike Johnson
+         3      70000
+
+
+SQL> CREATE OR REPLACE PACKAGE EmployeePackage AS
+  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
+  3  END EmployeePackage;
+  4  /
+
 Package created.
-SQL> CREATE OR REPLACE PACKAGE BODY CUSTOMER_SAL AS PROCEDURE FIND_SALARY(C_ID CUSTOMER21.ID%TYPE) IS C_SAL CUSTOMER21.SAL%TYPE;
-2 BEGIN
-3 SELECT SAL INTO C_SAL FROM CUSTOMER21 WHERE ID=C_ID;
-4 DBMS_OUTPUT.PUT_LINE('SALARY:'||C_SAL);
-5 END FIND_SALARY;
-6 END CUSTOMER_SAL;
-7 /
+
+SQL> CREATE OR REPLACE PACKAGE BODY EmployeePackage AS
+  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER IS
+  3          v_salary NUMBER;
+  4      BEGIN
+  5          -- Perform the logic to retrieve the salary based on the employee id
+  6          SELECT salary INTO v_salary FROM customer WHERE id = p_employeeId;
+  7
+  8          -- Return the salary
+  9          RETURN v_salary;
+ 10      END getSalaryById;
+ 11  END EmployeePackage;
+ 12  /
+
 Package body created.
+
 SQL> DECLARE
-2 CODE CUSTOMER21.ID%TYPE:=&CC_ID;
-3 BEGIN
-4 CUSTOMER_SAL.FIND_SALARY(CODE);
-5 END;
-6 /
-```
+  2      v_employeeId NUMBER := 1; -- Provide the employee id here
+  3      v_salary NUMBER;
+  4  BEGIN
+  5      v_salary := EmployeePackage.getSalaryById(v_employeeId);
+  6      DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);
+  7  END;
+  8  /
 
-## OUTPUT
-
-```
-Enter value for cc_id: 1000
-old 2: CODE CUSTOMER21.ID%TYPE:=&CC_ID;
-new 2: CODE CUSTOMER21.ID%TYPE:=1000;
-SALARY: 25000
 PL/SQL procedure successfully completed.
+
+SQL> CREATE OR REPLACE PACKAGE EmployePackage AS
+  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
+  3  END EmployePackage;
+  4  /
+
+Package created.
+
+SQL> CREATE OR REPLACE PACKAGE BODY EmployePackage AS
+  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER IS
+  3          v_salary NUMBER;
+  4      BEGIN
+  5          -- Perform the logic to retrieve the salary based on the employee id
+  6          SELECT salary INTO v_salary FROM customer WHERE ID = p_employeeId;
+  7
+  8          -- Return the salary
+  9          RETURN v_salary;
+ 10      END getSalaryById;
+ 11  END EmployePackage;
+ 12  /
+
+Package body created.
+
+SQL> SET SERVEROUTPUT ON
+SQL> DECLARE
+  2      v_employeeId NUMBER := 1; -- Provide the employee id here
+  3      v_salary NUMBER;
+  4  BEGIN
+  5      v_salary := EmployePackage.getSalaryById(v_employeeId);
+  6      DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);
+  7  END;
+  8  /
+Salary: 50000
+
+PL/SQL procedure successfully completed.
+
 ```
+
 
 ## Question
 
