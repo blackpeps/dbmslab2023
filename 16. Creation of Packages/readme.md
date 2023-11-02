@@ -67,43 +67,6 @@ Mike Johnson
 ```sql
 SQL> SET SERVEROUTPUT ON
 ```
-
-```sql
-SQL> CREATE OR REPLACE PACKAGE EmployeePackage AS
-  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
-  3  END EmployeePackage;
-  4  /
-
-Package created.
-```
-```sql
-SQL> CREATE OR REPLACE PACKAGE BODY EmployeePackage AS
-  2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER IS
-  3          v_salary NUMBER;
-  4      BEGIN
-  5          -- Perform the logic to retrieve the salary based on the employee id
-  6          SELECT salary INTO v_salary FROM customer WHERE id = p_employeeId;
-  7
-  8          -- Return the salary
-  9          RETURN v_salary;
- 10      END getSalaryById;
- 11  END EmployeePackage;
- 12  /
-
-Package body created.
-```
-```sql
-SQL> DECLARE
-  2      v_employeeId NUMBER := 1; -- Provide the employee id here
-  3      v_salary NUMBER;
-  4  BEGIN
-  5      v_salary := EmployeePackage.getSalaryById(v_employeeId);
-  6      DBMS_OUTPUT.PUT_LINE('Salary: ' || v_salary);
-  7  END;
-  8  /
-
-PL/SQL procedure successfully completed.
-```
 ```sql
 SQL> CREATE OR REPLACE PACKAGE EmployePackage AS
   2      FUNCTION getSalaryById(p_employeeId IN NUMBER) RETURN NUMBER;
