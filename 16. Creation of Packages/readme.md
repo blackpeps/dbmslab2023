@@ -1,11 +1,5 @@
 ## 16. Creation of Packages
 
----
-
-# UNDER MAINTENANCE
-
----
-
 
 ## To create a package in PL/SQL
 
@@ -18,7 +12,7 @@ A package will have two mandatory parts –
 
 ### 1. Package Specification
 
-The specification is the interface to the package. It just DECLARES the types, variables, constants, exceptions, cursors, and subprograms that can be referenced from outside the package. In other words, it contains all information about the content of the package, but excludes the code for the subprograms. All objects placed in the specification are called public objects. Any subprogram not in the package specification but coded in the package body is called a private object.
+The specification is the interface to the package. It just DECLARES the types, variables, constants, exceptions, cursors, and subprograms that can be referenced from outside the package. In other words, it contains all information about the content of the package but excludes the code for the subprograms. All objects placed in the specification are called public objects. Any subprogram not in the package specification but coded in the package body is called a private object.
 
 ### 2. Package Body
 
@@ -153,30 +147,74 @@ PL/SQL procedure successfully completed.
 ## Question
 
 2. Create a PL/SQL Package with addition and subtraction
-
 ```sql
-CREATE OR REPLACE PACKAGE BODY OPERATION
-is
-PROCEDURE ADDITION(A IN NUMBER,B IN NUMBER)
-is
-begin
-dbms_output.put_line('addition of two numbers: ' || ADD(A, B));
-end;
+ CREATE OR REPLACE PACKAGE MathOperations AS
+  2      FUNCTION Addition(a IN NUMBER, b IN NUMBER) RETURN NUMBER;
+  3      FUNCTION Subtraction(a IN NUMBER, b IN NUMBER) RETURN NUMBER;
+  4  END MathOperations;
+  5  /
 
-FUNCTION SUB(A IN NUMBER, B IN NUMBER) RETURN NUMBER
-is
-ans number(3);
-begin
-ans := A - B;
-return ans;
-end;
-end OPERATION;
-/
+Package created.
 ```
+```sql
+SQL> CREATE OR REPLACE PACKAGE BODY MathOperations AS
+  2      FUNCTION Addition(a IN NUMBER, b IN NUMBER) RETURN NUMBER IS
+  3          result NUMBER;
+  4      BEGIN
+  5          result := a + b;
+  6          RETURN result;
+  7      END Addition;
+  8
+  9      FUNCTION Subtraction(a IN NUMBER, b IN NUMBER) RETURN NUMBER IS
+ 10          result NUMBER;
+ 11      BEGIN
+ 12          result := a - b;
+ 13          RETURN result;
+ 14      END Subtraction;
+ 15  END MathOperations;
+ 16  /
 
-## Output
-
-```
-SQL> start D://pacbody.sql
 Package body created.
+```
+```sql
+SQL> DECLARE
+  2      result_add NUMBER;
+  3      result_sub NUMBER;
+  4  BEGIN
+  5      result_add := MathOperations.Addition(5, 3);
+  6      result_sub := MathOperations.Subtraction(10, 4);
+  7
+  8      DBMS_OUTPUT.PUT_LINE('Addition: ' || result_add);
+  9      DBMS_OUTPUT.PUT_LINE('Subtraction: ' || result_sub);
+ 10  END;
+ 11  /
+Addition: 8
+Subtraction: 6
+
+PL/SQL procedure successfully completed.
+```
+```sql
+SQL> DECLARE
+  2      result_add NUMBER;
+  3      result_sub NUMBER;
+  4      A NUMBER(4):=&NUM1;
+  5      B NUMBER(4):=&NUM2;
+  6  BEGIN
+  7      result_add := MathOperations.Addition(A,B);
+  8      result_sub := MathOperations.Subtraction(A,B);
+  9
+ 10      DBMS_OUTPUT.PUT_LINE('Addition: ' || result_add);
+ 11      DBMS_OUTPUT.PUT_LINE('Subtraction: ' || result_sub);
+ 12  END;
+ 13  /
+Enter value for num1: 4
+old   4:     A NUMBER(4):=&NUM1;
+new   4:     A NUMBER(4):=4;
+Enter value for num2: 5
+old   5:     B NUMBER(4):=&NUM2;
+new   5:     B NUMBER(4):=5;
+Addition: 9
+Subtraction: -1
+
+PL/SQL procedure successfully completed.
 ```
