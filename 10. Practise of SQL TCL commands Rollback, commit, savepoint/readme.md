@@ -1,8 +1,11 @@
-## 10. Practise of SQL TCL commands Rollback, commit, savepoint.
+# 10. Practise of SQL TCL commands Rollback, commit, savepoint.
 
-> This section will contain two practice questions. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
+## AIM
 
----
+To implement DCL commands for granting and revoking user privileges.
+
+## Theory
+
 ### TRANSACTIONAL CONTROL LANGUAGE (T.C.L)
 
 A transaction is a logical unit of work. All changes made to the database can be referred to as a transaction. Transaction changes can be made permanent to the database only if they are committed a transaction begins with an executable SQL statement & ends explicitly with either a rollback or commit statement.
@@ -30,8 +33,7 @@ A role back command is used to undo the current transactions. We can roll back t
 
 `ROLE BACK to save_point_ID;`
 
----
-### Practise Questions
+## Questions
 
 1. Create a student table
 2. Write a query to start the transaction.
@@ -42,6 +44,8 @@ A role back command is used to undo the current transactions. We can roll back t
 7. Write a query to implement a commit.
 8. Insert a value into the table.
 9. Write a query rollback.
+
+## Output
 
 #### Question 1
 ```
