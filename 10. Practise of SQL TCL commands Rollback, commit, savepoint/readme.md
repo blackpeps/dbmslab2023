@@ -2,7 +2,7 @@
 
 ## AIM
 
-To implement DCL commands for granting and revoking user privileges.
+To implement SQL TCL commands like Rollback, Commit, Save point.
 
 ## Theory
 
