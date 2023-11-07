@@ -51,7 +51,7 @@ There are four types of single-row functions. They are:
 - **SUM**: Calculates the sum of a set of values
 - **TRUNCATE**: Truncates a number to the specified number of decimal places
 
-### Data Functions
+### Date Functions
 
 - **ADDDATE**: Adds a time/date interval to a date and then returns the date
 - **ADDTIME**: Adds a time interval to a time/datetime and then returns the time/datetime
