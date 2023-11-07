@@ -1,10 +1,16 @@
-## 08. Implementation of order by, group by, and having.
+# 08. Implementation of order by, group by, and having.
 
-> This section will contain two practice questions. You may write any one of these in the rough record, while the other will be referred for the lab exam. **But for the fair record, you may only write what is given by the teacher.**
+## AIM
 
----
+To implement the order by, group by, having clause
 
-### Practise Question 1
+## Theory
+
+- **ORDER BY:** In RDBMS, the ORDER BY clause is used to sort the result set of a query based on one or more columns in ascending or descending order, allowing for the presentation of data in a specific sequence.
+
+- **GROUP BY and HAVING:** GROUP BY is used to group rows with similar values in one or more columns, and HAVING is applied in conjunction with GROUP BY to filter the grouped data based on a specified condition, enabling aggregate functions to be used on the grouped data.
+
+## QUESTIONS
 
 Create a table named 'Student' and insert some values. Then answer the questions followed.
 
@@ -16,9 +22,8 @@ Create a table named 'Student' and insert some values. Then answer the questions
 4. Display the distinct departments in minimum, and maximum marks from the student table using group by operation.
 5. Display the count id number, and department from the student table by using a group by having a function which is greater than the count id number by order by function in descending order.
 
-#### Performing Queries
+## OUTPUT
 
-##### Prerequisite
 ```
 mysql> CREATE TABLE student (
     ->     ID_NUMBER INT,
@@ -137,36 +142,3 @@ mysql> SELECT COUNT(ID_NUMBER), DEPT FROM student GROUP BY DEPT
 +------------------+------+
 1 row in set (0.00 sec)
 ```
----
-
-### Practise Question 2 (Try this for yourself)
-
-Create two tables. MANAGER_ID is the empno of the employee whom the employee reports to. DEPTNO is a foreign key. Insert these values into the department table.
-
-`Dept(Department_Id, Department_Name , Manager_id, Loc)`
-
-`Emp(Emp_no , Emp_name,Job , Salary , Hiredate,Comm , Depno)`
-
-1) Display the name and salary for all employees whose salary is not in the range of 5000 and 35000
-2) Display the employee name, job ID, and start date of employees hired between February 20, 1990, and May 1, 1998. Order the query in ascending order by start date.
-3) list the name and salary of employees who earn between 5,000 and 12,000, and are in department 2 or 4. Label the columns Employee and Monthly Salary, respectively.
-4) Display the name and hire date of every employee who was hired in 1994.
-5) Display the name, salary, and commission for all employees who earn commissions. Sort data in descending order of salary and commissions.
-6) Display the name and job title of all employees who do not have a manager.
-7) Display the names of all employees where the third letter of the name is an 'a'.
-8) Display the names of all employees who have an a and an e in their name.
-9) Display the name, job, and salary for all employees whose job is sales representative or stock clerk and whose salary is not equal to 2,0000, 4000, or 7,000.
-10) Write a query that displays the employee’s names with the first letter capitalized and all other letters lowercase and the length of the name for all employees whose name starts with J, A, or M. Give each column an appropriate label. Sort the results by the employees’ names.
-11) For each employee, display the employee’s name, and calculate the number of months between today and the date the employee was hired and years worked. Label the columnMONTHS_WORKED. Order your results by the number of months employed. Round the number of months and years up to the closest whole number.
-12) Write a query to display the name, department number, and department name for all employees.
-13) Create a query to display the name and hire date of any employee hired after employee Mathew
-14) Display the names and hire dates for all employees who were hired before their managers, along with their manager’s names and hire dates. Label the columns Employee, EmpHired, Manager, and Mgr Hired, respectively.
-15) Write a query to display the number of people with the same job.
-16) Display the manager number and the salary of the lowest-paid employee for that manager. Exclude anyone whose manager is not known. Exclude any groups where the minimum salary is less than 6,000. Sort the output in descending order of salary.
-17) Write a query to display each department’s name, location, number of employees, and the average salary for all employees in that department. Label the columns Name, Location, Number of People, and Salary, respectively. Round the average salary to two decimal places.
-18) Write a query to display the name and hire date of any employee in the same department as Amit. Exclude JOHN.
-19) Write a query that displays the employee numbers and names of all employees who work in a department with any employee whose name contains a u.
-20) Display the employee name and department name of all employees who work in a department that has at least 3 employees. Order the list in alphabetical order first by department name, then by employee name.
-21) Write a query to list the length of service of the employees (of the form n years and m months).
----
-> You can refer [this PDF](pdfs/exp9.pdf) from my repository for the answer.
