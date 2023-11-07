@@ -1,35 +1,22 @@
 # 13. Implementation of various control structures like, if then, then else, if then else, if while
 
+## AIM
 
-# Introduction to PL/SQL
+To Implement various control structures like IF-THEN, IF-THEN-ELSE, IF-THEN ELSIF, CASE, and WHILE using PL/SQL.
 
-> Just go through this section to learn about PL/SQL, otherwise skip to the experiment section.
+## Theory
 
-PL/SQL is a block-structured language that can have multiple blocks in it. The programs of PL/SQL are logical blocks that can contain any number of nested sub-blocks. PL/SQL stands for "Procedural Language extension of SQL" and is used in Oracle. It is tightly integrated with the Oracle database (since version 7) and offers various functionalities. Although PL/SQL is closely integrated with SQL, it adds some programming constraints that are not available in SQL.
+## Introduction to PL/SQL
+
+PL/SQL is a block-structured language used in Oracle, tightly integrated with the database. It supports multiple nested blocks and extends SQL with additional programming constraints.
 
 ## Features of PL/SQL
 
-PL/SQL has the following features –
-- **Tightly Integrated with SQL**: PL/SQL is tightly integrated with SQL.
-- **Extensive Error Checking**: It offers extensive error checking.
-- **Numerous Data Types**: It offers numerous data types.
-- **Programming Structures**: It offers a variety of programming structures.
-- **Structured Programming**: It supports structured programming through functions and procedures.
-- **Object-Oriented Programming**: It supports object-oriented programming.
-- **Web Applications**: It supports the development of web applications and server pages.
+PL/SQL features include tight SQL integration, robust error checking, diverse data types, versatile programming structures, support for structured and object-oriented programming, and web application development.
 
 ## Advantages of PL/SQL
 
-PL/SQL has the following advantages –
-- **SQL Integration**: SQL is the standard database language, and PL/SQL is strongly integrated with SQL. PL/SQL supports both static and dynamic SQL.
-- **Reduced Network Traffic**: PL/SQL allows sending an entire block of statements to the database at one time, reducing network traffic and providing high performance.
-- **High Productivity**: PL/SQL gives high productivity to programmers as it can query, transform, and update data in a database.
-- **Time Savings**: It saves time on design and debugging with strong features such as exception handling, encapsulation, data hiding, and object-oriented data types.
-- **Portability**: Applications written in PL/SQL are fully portable.
-- **High Security**: PL/SQL provides a high-security level.
-- **Predefined SQL Packages**: PL/SQL provides access to predefined SQL packages.
-- **Object-Oriented Programming**: It provides support for Object-Oriented Programming.
-- **Web Applications**: It provides support for developing Web Applications and Server Pages.
+PL/SQL offers numerous advantages, including strong SQL integration, reduced network traffic, high programmer productivity, time savings through features like exception handling and encapsulation, portability, high security, access to predefined SQL packages, support for object-oriented programming, and web application development.
 
 ## Basic Syntax
 
@@ -51,31 +38,17 @@ END;
 
 ## PL/SQL Comments
 
-Program comments are explanatory statements that can be included in the PL/SQL code that you write and help anyone reading its source code. The PL/SQL supports single-line and multi-line comments. All characters available inside any comment are ignored by the PL/SQL compiler. The PL/SQL single-line comments start with the delimiter -- (double hyphen), and multi-line comments are enclosed by /* and */.
-
-Example:
-```plsql
-DECLARE
--- variable declaration
-message varchar2(20):= 'Hello, World!';
-BEGIN
-/*
-* PL/SQL executable statement(s)
-*/
-dbms_output.put_line(message);
-END;
-```
+- Single-line (--) and multi-line (/* */) comments to explain code.
 
 ## PL/SQL Identifiers
 
-PL/SQL identifiers are constants, variables, exceptions, procedures, cursors, and reserved words. The identifiers consist of a letter optionally followed by more letters, numerals, dollar signs, underscores, and number signs and should not exceed 30 characters. By default, identifiers are not case-sensitive. So you can use integer or INTEGER to represent a numeric value. You cannot use a reserved keyword as an identifier.
-
+- Constants, variables, exceptions, procedures, and cursors.
+- Letters, numerals, $, _, and #, up to 30 characters.
+- Not case-sensitive, except for reserved keywords.
 
 ## Decision-Making Statements
 
 Decision-making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is true, and optionally, other statements to be executed if the condition is false.
-
-## Statements and Description
 
 ### 1. IF - THEN statement
 
@@ -125,17 +98,22 @@ Use one or more loops inside any other basic loop, while, or for loop.
 
 ---
 
-## Some Prerequisites before learning about PL/SQL
+# How to write the following sections in fair record?
 
-- You will be doing PL/SQL on `SQL Plus` software which is available on Windows and Linux.
-- When running an instance of the `SQL Plus` window, you are required to type `SET SERVEROUTPUT ON;` only once. I have added this command to every program snippet below, which should be avoided, although it may not cause any harm if you execute the command again in the same instance of the window.
-- Since PL/SQL contains snippets of code, which will be executed after the block of code, you will not be able to edit the code if you make a mistake. So to make life easier, you can type, which I know you won't do, the following code into `Notepad` (for Windows) or `gedit` (for Linux). Copy this to the SQL Plus window, you will get the hang of this very soon.
+- Question(s) on right side
+- Algorithm on the right side
+- Program/Output as it is print, on the left side.
+- **PROGRAM NEED NOT BE WRITTEN ON FAIR RECORD**
 
-# Questions
+- Write the following as sections on each page (total of 7 programs)
+
+---
+
+### QUESTION
 
 **1.** Write a PL/SQL program to find the sum of two numbers
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Enter number A
@@ -173,12 +151,15 @@ THE SUM OF TWO NUMBER IS:50
 PL/SQL procedure successfully completed.
 ```
 
+---
 
-## IF-THEN QUESTION
+## IF-THEN
+
+### QUESTION
 
 **2.** Write a PL/SQL program to display whether the given number is zero.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Set NUM1=0
@@ -210,13 +191,15 @@ THE NUMBER IS ZERO
 END OF PROGRAM
 PL/SQL procedure successfully completed.
 ```
+---
 
+## IF-THEN-ELSE
 
-## IF-THEN-ELSE QUESTIONS
+### QUESTION
 
 **3.** Write a PL/SQL program to find whether a given number is odd or even.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Enter the number to check
@@ -225,9 +208,7 @@ PL/SQL procedure successfully completed.
 5. Print the output
 6. Stop
 
-
-
-### Program (IF-THEN-ELSE)
+### Program
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -260,11 +241,15 @@ THE NUMBER IS ODD
 PL/SQL procedure successfully completed.
 ```
 
-## IF-THEN-ELSEIF QUESTION
+---
+
+## IF-THEN-ELSEIF
+
+### QUESTION
 
 **4.** Write a PL/SQL program to display the grade list of a student.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Enter three marks
@@ -274,7 +259,7 @@ PL/SQL procedure successfully completed.
 6. Otherwise, display grade as C grade
 7. Stop
 
-### Program (IF-THEN-ELSEIF)
+### Program
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -319,11 +304,16 @@ GRADE:C
 PL/SQL procedure successfully completed.
 ```
 
-## CASE QUESTION
+---
+
+
+## CASE
+
+### QUESTION
 
 **5.** Write a PL/SQL program to find the area of geometric shapes using CASE.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Take input for choice and then for area variables from the user
@@ -331,7 +321,7 @@ PL/SQL procedure successfully completed.
 4. Display output according to the case
 5. Stop
 
-### Program (CASE)
+### Program
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -383,18 +373,15 @@ AREA OF CIRCLE IS:12.56
 PL/SQL procedure successfully completed.
 ```
 
-**NOTE**
+---
 
-> Even though the code includes prompts for BASE and HEIGHT, they are not used when you choose option 1 (calculating the area of a circle) because the branch of the CASE statement for option 2 (area of a triangle) is not executed. If you had chosen option 2 instead of 1, the prompts for BASE and HEIGHT would have been used to calculate the area of a triangle.
+## WHILE
 
-> This is kinda a draw back, I would say, but it is what it is.
-
-
-## WHILE QUESTION
+### QUESTION
 
 **6.** Write a PL/SQL program to check whether the number is an Armstrong number or not.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Read a number from the user
@@ -409,7 +396,7 @@ PL/SQL procedure successfully completed.
    6.2. If false, display the number is not an Armstrong
 7. Stop
 
-### Program (WHILE)
+### Program
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -452,11 +439,15 @@ THE NUMBER IS NOT ARMSTRONG
 PL/SQL procedure successfully completed.
 ```
 
-## FOR LOOP QUESTION
+---
+
+## FOR LOOP
+
+### QUESTION
 
 7. Write a PL/SQL program to display the prime numbers up to 'n'.
 
-**ALGORITHM**
+### ALGORITHM
 
 1. Start
 2. Read the limit
@@ -467,9 +458,7 @@ PL/SQL procedure successfully completed.
    4.2. Check if C is equal to 2, then display prime numbers
 5. Stop
 
----
-
-### Program (FOR LOOP)
+### Program
 
 ```sql
 SQL> SET SERVEROUTPUT ON
