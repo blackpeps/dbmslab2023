@@ -60,20 +60,6 @@ REVOKE create session, create table from James;
 REVOKE select, insert ON emp FROM James;
 ```
 
-#### ROLE
-A role is a named group of related privileges that can be granted to the user. In other words, a role is a predefined collection of privileges that are grouped together, thus privileges are easier to assign user.
-
-`Create role custom;`
-
-`Grant create table, create view TO custom;`
-
-`SQL> Grant select, insert ON emp TO custom;`
-
-Eg:
-```sql
-Grant custom to James, Steve;
-```
-
 ---
 
 ## Question
