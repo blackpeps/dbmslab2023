@@ -38,19 +38,6 @@ There are four types of single-row functions. They are:
 - **SUBSTR**: Extracts a substring from a string (starting at any position)
 - **SUBSTRING**: Extracts a substring from a string (starting at any position)
 
-### Numeric Function
-
-- **ABS**: Returns the absolute value of a number
-- **CEIL**: Returns the smallest integer value that is greater than or equal to a number
-- **FLOOR**: Returns the largest integer value that is less than or equal to a number
-- **GREATEST**: Returns the greatest value of the list of arguments
-- **LEAST**: Returns the smallest value of the list of arguments
-- **MOD**: Returns the remainder of a number divided by another number
-- **ROUND**: Rounds a number to a specified number of decimal places
-- **SQRT**: Returns the square root of a number
-- **SUM**: Calculates the sum of a set of values
-- **TRUNCATE**: Truncates a number to the specified number of decimal places
-
 ### Date Functions
 
 - **ADDDATE**: Adds a time/date interval to a date and then returns the date
@@ -66,6 +53,19 @@ There are four types of single-row functions. They are:
 - **MINUTE**: Returns the minute part of a time/datetime
 - **MONTH**: Returns the month part for a given date
 - **SECOND**: Returns the seconds part of a time/datetime
+
+### Numeric Function
+
+- **ABS**: Returns the absolute value of a number
+- **CEIL**: Returns the smallest integer value that is greater than or equal to a number
+- **FLOOR**: Returns the largest integer value that is less than or equal to a number
+- **GREATEST**: Returns the greatest value of the list of arguments
+- **LEAST**: Returns the smallest value of the list of arguments
+- **MOD**: Returns the remainder of a number divided by another number
+- **ROUND**: Rounds a number to a specified number of decimal places
+- **SQRT**: Returns the square root of a number
+- **SUM**: Calculates the sum of a set of values
+- **TRUNCATE**: Truncates a number to the specified number of decimal places
 
 ## Advanced Functions
 
