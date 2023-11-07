@@ -60,8 +60,6 @@ REVOKE create session, create table from James;
 REVOKE select, insert ON emp FROM James;
 ```
 
----
-
 ## Question
 
 1. Create a new MYSQL user account.
