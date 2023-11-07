@@ -1,5 +1,11 @@
 ## 11. Implementation of DCL commands for granting and revoking user privileges.
 
+## Aim
+
+To implement DCL commands for granting and revoking user privileges.
+
+## Theory
+
 ### PRIVILEGES
 A privilege is a right to execute an SQL statement or to access another user's object. In Oracle, there are two types of privileges
 - System Privileges
@@ -70,7 +76,7 @@ Grant custom to James, Steve;
 
 ---
 
-### Practise Question
+## Question
 
 1. Create a new MYSQL user account.
 2. Give privileges to create a new database to a user.
@@ -79,7 +85,7 @@ Grant custom to James, Steve;
 5. Check the privileges for a specific user.
 6. Revoke all privileges.
 
-### Answers
+## Output
 
 1. ```sql
    CREATE USER 'new_user'@'localhost' IDENTIFIED BY 'password';
