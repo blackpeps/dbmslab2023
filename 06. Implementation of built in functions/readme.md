@@ -51,9 +51,7 @@ There are four types of single-row functions. They are:
 - **SUM**: Calculates the sum of a set of values
 - **TRUNCATE**: Truncates a number to the specified number of decimal places
 
-### String Functions
-
-## Functions
+### Data Functions
 
 - **ADDDATE**: Adds a time/date interval to a date and then returns the date
 - **ADDTIME**: Adds a time interval to a time/datetime and then returns the time/datetime
@@ -76,6 +74,10 @@ There are four types of single-row functions. They are:
 - **SYSTEM USER**: Returns the current MySQL user name and hostname
 - **USER**: Returns the current MySQL user name and hostname
 - **VERSION**: Returns the current version of the MySQL database
+
+### Result
+
+Queries to implement built-in functions in RDBMS have been executed successfully and output obtained
 
 ### OUTPUT
 
