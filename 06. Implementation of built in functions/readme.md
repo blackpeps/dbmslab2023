@@ -1,19 +1,83 @@
-## 06. Implementation of built-in functions
+# 06. Implementation of built-in functions
 
-> Refer [this PDF](pdfs/exp6.pdf) from my repository for any assistance. This PDF may contain additional informations that may not be mentioned here.
+## AIM
 
-### RDBMS Built in Functions
+To implement built-in functions in RDBMS
+
+## THEORY
+
+### RDBMS Built-in Functions
 There are two types of functions:
 1. **Single Row Functions:** Single row or Scalar functions return a value for every row that is processed in a query.
 2. **Group Functions:** These functions group the rows of data based on the values returned by the query. This is discussed in SQL GROUP Functions. The group functions are used to calculate aggregate values like total or average, which return just one total or one average value after processing a group of rows.
 
-There are four types of single row functions. They are:
+There are four types of single-row functions. They are:
 1. **Numeric Functions:** These are functions that accept numeric input and return numeric values.
 2. **Character or Text Functions:** These are functions that accept character input and can return both character and number values.
 3. **Date Functions:** These are functions that take values that are of datatype DATE as input and return values of datatype DATE, except for the MONTHS_BETWEEN function, which returns a number.
 4. **Conversion Functions:** These are functions that help us to convert a value in one form to another form. For Example: a null value into an actual value, or a value from one datatype to another datatype like NVL, TO_CHAR, TO_NUMBER, TO_DATE etc.
 
-### MySQL Terminal Examples
+### String Function
+
+- **ASCII**: Returns the ASCII value for the specific character
+- **CHAR LENGTH**: Returns the length of a string (in characters)
+- **CHARACTER LENGTH**: Returns the length of a string (in characters)
+- **CONCAT**: Adds two or more expressions together
+- **LCASE**: Converts a string to lower-case
+- **LEFT**: Extracts a number of characters from a string (starting from left)
+- **LENGTH**: Returns the length of a string (in bytes)
+- **LOCATE**: Returns the position of the first occurrence of a substring in a string
+- **LTRIM**: Removes leading spaces from a string
+- **POSITION**: Returns the position of the first occurrence of a substring in a string
+- **REPEAT**: Repeats a string as many times as specified
+- **REPLACE**: Replaces all occurrences of a substring within a string, with a new substring
+- **REVERSE**: Reverses a string and returns the result
+- **RIGHT**: Extracts a number of characters from a string (starting from right)
+- **RTRIM**: Removes trailing spaces from a string
+- **STRCMP**: Compares two strings
+- **SUBSTR**: Extracts a substring from a string (starting at any position)
+- **SUBSTRING**: Extracts a substring from a string (starting at any position)
+
+### Numeric Function
+
+- **ABS**: Returns the absolute value of a number
+- **CEIL**: Returns the smallest integer value that is greater than or equal to a number
+- **FLOOR**: Returns the largest integer value that is less than or equal to a number
+- **GREATEST**: Returns the greatest value of the list of arguments
+- **LEAST**: Returns the smallest value of the list of arguments
+- **MOD**: Returns the remainder of a number divided by another number
+- **ROUND**: Rounds a number to a specified number of decimal places
+- **SQRT**: Returns the square root of a number
+- **SUM**: Calculates the sum of a set of values
+- **TRUNCATE**: Truncates a number to the specified number of decimal places
+
+### String Functions
+
+## Functions
+
+- **ADDDATE**: Adds a time/date interval to a date and then returns the date
+- **ADDTIME**: Adds a time interval to a time/datetime and then returns the time/datetime
+- **CURDATE**: Returns the current date
+- **CURRENT DATE**: Returns the current date
+- **CURRENT TIME**: Returns the current time
+- **DATE**: Extracts the date part from a datetime expression
+- **DAY**: Returns the day of the month for a given date
+- **DAYNAME**: Returns the weekday name for a given date
+- **DAYOFMONTH**: Returns the day of the month for a given date
+- **HOUR**: Returns the hour part for a given date
+- **MINUTE**: Returns the minute part of a time/datetime
+- **MONTH**: Returns the month part for a given date
+- **SECOND**: Returns the seconds part of a time/datetime
+
+## Advanced Functions
+
+- **CURRENT USER**: Returns the name and hostname for the MySQL account that the server used to authenticate the current client
+- **SESSION USER**: Returns the current MySQL user name and hostname
+- **SYSTEM USER**: Returns the current MySQL user name and hostname
+- **USER**: Returns the current MySQL user name and hostname
+- **VERSION**: Returns the current version of the MySQL database
+
+### OUTPUT
 
 #### String Functions
 ```
