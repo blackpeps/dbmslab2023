@@ -2,7 +2,7 @@
 
 ## AIM
 
-To implement SQL TCL commands like Rollback, Commit, Save point.
+To implement SQL TCL commands like Rollback, Commit, and Save point.
 
 ## Theory
 
@@ -18,20 +18,20 @@ This command is used to end a transaction only with the help of the commit comma
 `COMMIT;`
 
 #### SAVE POINT
-Save points are like marks to divide a very lengthy transaction into smaller ones. They are used to identify a point in a transaction to which we can later roll back. Thus, save point is used in conjunction with role back.
+Save points are like marks dividing a lengthy transaction into smaller ones. They identify a point in a transaction to which we can later roll back. Thus, save point is used in conjunction with rollback.
 
 *Syntax:*
 
 `SAVEPOINT SAVEPOINT_ID;`
 
 #### ROLLBACK
-A role back command is used to undo the current transactions. We can roll back the entire transaction so that all changes made by SQL statements are undo (or) roll back a transaction to a save point so that the SQL statements after the save point are rolled back.
+A rollback command is used to undo the current transactions. We can roll back the entire transaction so that all changes made by SQL statements are undo (or) roll back a transaction to a save point so that the SQL statements after the save point are rolled back.
 
 *Syntax:*
 
-`ROLE BACK;` (current transaction that can be back)
+`roll back;` (current transaction that can be back)
 
-`ROLE BACK to save_point_ID;`
+`roll back to save_point_ID;`
 
 ## Questions
 
