@@ -1,6 +1,14 @@
-## 12. Practise SQL Commands for creation or view assertion.
+# 12. Practise SQL Commands for creation or view assertion.
 
-### Practise Questions
+## AIM
+
+To implement SQL commands for the creation of views and assertions.
+
+## Theory
+
+In RDBMS, a creation assertion is used to define the structure of a database, specifying tables, columns, keys, and constraints. A view assertion, on the other hand, defines a virtual table based on the data from one or more underlying tables, allowing users to query and interact with the data in a more convenient and tailored manner.
+
+## Questions
 
 1. Create a table and insert values into the emp55 table.
 2. Write a query to display the emp55 from employee55 where salary is greater than 10000.
@@ -10,6 +18,8 @@
 6. Write a query to delete a row where the department number is 3.
 7. Write a query to view emp55 from employee55 where the common is less than 150 with the check option.
 8. Write a query to drop the table.
+
+## OUTPUT
 
 #### Question 1
 ```
