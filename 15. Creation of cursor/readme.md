@@ -165,33 +165,55 @@ PL/SQL procedure successfully completed.
 
 ### 3. To write a Cursor to display the list of 10 highest-paid Employees and their Total Salary
 
-**INPUT**
+**PROGRAM**
 ```sql
-set serveroutput on;
-declare
-cursor c is
-select empid, empname, salary from emplo order by salary desc;
-name emplo.empname%type;
-id emplo.empid%type;
-sal emplo.salary%type;
-tot emplo.salary%type;
-i int;
-begin
-tot:=0;
-open c;
-for i in 1..10
-loop
-fetch c into id, name, sal;
-exit when c%NOTFOUND;
-tot:=tot+sal;
-dbms_output.put_line('EMPLOYEE ID:' || id);
-dbms_output.put_line('EMPLOYEE NAME:' || name);
-dbms_output.put_line('SALARY:' || sal);
-dbms_output.put_line('*********************');
-end loop;
-dbms_output.put_line('TOTAL SALARY:' || tot);
-commit;
-close c;
-end;
-/
+SQL> set serveroutput on;
+SQL> declare
+  2  cursor c is
+  3  select empid, empname, salary from emplo order by salary desc;
+  4  name emplo.empname%type;
+  5  id emplo.empid%type;
+  6  sal emplo.salary%type;
+  7  tot emplo.salary%type;
+  8  i int;
+  9  begin
+ 10  tot:=0;
+ 11  open c;
+ 12  for i in 1..10
+ 13  loop
+ 14  fetch c into id, name, sal;
+ 15  exit when c%NOTFOUND;
+ 16  tot:=tot+sal;
+ 17  dbms_output.put_line('EMPLOYEE ID:' || id);
+ 18  dbms_output.put_line('EMPLOYEE NAME:' || name);
+ 19  dbms_output.put_line('SALARY:' || sal);
+ 20  dbms_output.put_line('*********************');
+ 21  end loop;
+ 22  dbms_output.put_line('TOTAL SALARY:' || tot);
+ 23  commit;
+ 24  close c;
+ 25  end;
+ 26  /
 ```
+
+**OUTPUT**
+```sql
+EMPLOYEE ID:4
+EMPLOYEE NAME:d
+SALARY:40000
+*********************
+EMPLOYEE ID:3
+EMPLOYEE NAME:c
+SALARY:30000
+*********************
+EMPLOYEE ID:2
+EMPLOYEE NAME:b
+SALARY:20000
+*********************
+EMPLOYEE ID:1
+EMPLOYEE NAME:a
+SALARY:10000
+*********************
+TOTAL SALARY:100000
+
+PL/SQL procedure successfully completed.
