@@ -1,19 +1,16 @@
-## 14. Creation of procedures, triggers, functions
+# 14. Creation of procedures, triggers, functions
 
-# Procedures
+## AIM
 
-A subprogram is a program unit/module that performs a particular task. These subprograms are combined to form larger programs. This is basically called the 'Modular design'. A subprogram can be invoked by another subprogram or program, which is called the calling program.
+To create procedure, triggers, and functions.
 
-At the schema level, a subprogram is a standalone subprogram. It is created with the `CREATE PROCEDURE` or the `CREATE FUNCTION` statement. It is stored in the database and can be deleted with the `DROP PROCEDURE` or `DROP FUNCTION` statement. A subprogram created inside a package is a packaged subprogram. It is stored in the database and can be deleted only when the package is deleted with the `DROP PACKAGE` statement.
+## THEORY
 
-**PL/SQL subprograms** are named PL/SQL blocks that can be invoked with parameters.
+### Procedures
 
-PL/SQL provides two kinds of subprograms:
+A subprogram is a modular unit that performs a specific task and is used in larger programs, known as modular design. Subprograms can be called by other subprograms or programs. At the schema level, subprograms can be standalone or packaged, created with `CREATE PROCEDURE` or `CREATE FUNCTION`, and deleted with `DROP PROCEDURE` or `DROP FUNCTION`. In PL/SQL, subprograms are named blocks invoked with parameters. PL/SQL offers two types: Functions (return a value) and Procedures (perform actions without direct return).
 
-- **Functions** – These subprograms return a single value; mainly used to compute and return a value.
-- **Procedures** – These subprograms do not return a value directly; mainly used to perform an action.
-
-## 1.1 Creating a Procedure
+#### 1.1 Creating a Procedure
 
 A procedure is created with the `CREATE OR REPLACE PROCEDURE` statement. The simplified syntax for the `CREATE OR REPLACE PROCEDURE` statement is as follows:
 
@@ -25,14 +22,7 @@ BEGIN
 END procedure_name;
 ```
 
-Where:
-- `procedure_name` specifies the name of the procedure.
-- `[OR REPLACE]` option allows the modification of an existing procedure.
-- The optional parameter list contains name, mode, and types of the parameters. `IN` represents the value that will be passed from outside, and `OUT` represents the parameter that will be used to return a value outside of the procedure.
-- `procedure_body` contains the executable part.
-- The `AS` keyword is used instead of the `IS` keyword for creating a standalone procedure.
-
-## 1.2 Deleting a Standalone Procedure
+#### 1.2 Deleting a Standalone Procedure
 
 A standalone procedure is deleted with the `DROP PROCEDURE` statement. Syntax for deleting a procedure is:
 
@@ -40,23 +30,17 @@ A standalone procedure is deleted with the `DROP PROCEDURE` statement. Syntax fo
 DROP PROCEDURE procedure-name;
 ```
 
-## 1.3 Parameter Modes in PL/SQL Subprograms
+#### 1.3 Parameter modes in PL/SQL subprograms:
 
-### IN
+1. **IN**: Read-only parameter; passed by reference. Accepts constants, literals, initialized variables, or expressions. Can be initialized with a default value but is omitted if not provided.
 
-An IN parameter lets you pass a value to the subprogram. It is a read-only parameter. Inside the subprogram, an IN parameter acts like a constant. It cannot be assigned a value. You can pass a constant, literal, initialized variable, or expression as an IN parameter. You can also initialize it to a default value; however, in that case, it is omitted from the subprogram call. It is the default mode of parameter passing. Parameters are passed by reference.
+2. **OUT**: Returns a value to the calling program; acts like a variable. Value can be changed and referenced after assignment. Actual parameter must be a variable and is passed by value.
 
-### OUT
+3. **IN OUT**: Passes an initial value to a subprogram and returns an updated value to the caller. Can be assigned and read. Actual parameter must be a variable; passed by value.
 
-An OUT parameter returns a value to the calling program. Inside the subprogram, an OUT parameter acts like a variable. You can change its value and reference the value after assigning it. The actual parameter must be a variable, and it is passed by value.
+### 2. Function
 
-### IN OUT
-
-An IN OUT parameter passes an initial value to a subprogram and returns an updated value to the caller. It can be assigned a value, and the value can be read. The actual parameter corresponding to an IN OUT formal parameter must be a variable, not a constant or an expression. Formal parameter must be assigned a value. Actual parameter is passed by value.
-
-# 2. Function
-
-## 2.1 Creating a Function
+#### 2.1 Creating a Function
 
 A standalone function is created using the `CREATE FUNCTION` statement. The simplified syntax for the `CREATE OR REPLACE FUNCTION` statement is as follows:
 
@@ -69,36 +53,15 @@ BEGIN
 END [function_name];
 ```
 
-Where:
-- `function_name` specifies the name of the function.
-- `[OR REPLACE]` option allows the modification of an existing function.
-- The optional parameter list contains name, mode, and types of the parameters. `IN` represents the value that will be passed from outside, and `OUT` represents the parameter that will be used to return a value outside of the procedure.
-- The function must contain a return statement.
-- The `RETURN` clause specifies the data type you are going to return from the function.
-- `function_body` contains the executable part.
-- The `AS` keyword is used instead of the `IS` keyword for creating a standalone function.
+#### 2.2 Calling a Function
 
-## 2.2 Calling a Function
+Functions are defined for specific tasks. To use a function, you call it in your program, transferring control to the function. The function performs its task and returns control to the main program when it encounters a return statement or reaches the last "END" statement.
 
-While creating a function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task. When a program calls a function, the program control is transferred to the called function. A called function performs the defined task and when its return statement is executed or when the last `END` statement is reached, it returns the program control back to the main program.
-
-# 3. Trigger
+### 3. Trigger
 
 Triggers are stored programs, which are automatically executed or fired when some events occur. Triggers can be defined on the table, view, schema, or database with which the event is associated.
 
-## 3.1 Benefits of Triggers
-
-Triggers can be written for the following purposes:
-
-- Generating some derived column values automatically
-- Enforcing referential integrity
-- Event logging and storing information on table access
-- Auditing
-- Synchronous replication of tables
-- Imposing security authorizations
-- Preventing invalid transactions
-
-## 3.2 Creating Triggers
+#### 3.1 Creating Triggers
 
 The syntax:
 
@@ -113,25 +76,13 @@ Exception-handling-statements
 END;
 ```
 
-Where:
-- `CREATE [OR REPLACE] TRIGGER trigger_name` − Creates or replaces an existing trigger with the trigger_name.
-- `{BEFORE | AFTER | INSTEAD OF}` − This specifies when the trigger will be executed. The `INSTEAD OF` clause is used for creating a trigger on a view.
-- `{INSERT [OR] | UPDATE [OR] | DELETE}` − This specifies the DML operation.
-- `[OF col_name]` − This specifies the column name that will be updated.
-- `[ON table_name]` − This specifies the name of the table associated with the trigger.
-- `[REFERENCING OLD AS o NEW AS n]` − This allows you to refer new and old values for various DML statements, such as INSERT, UPDATE, and DELETE.
-- `[FOR EACH ROW]` − This specifies a row-level trigger, i.e., the trigger will be executed for each row being affected. Otherwise, the trigger will execute just once when the SQL statement is executed, which is called a table-level trigger.
-- `WHEN (condition)` − This provides a condition for rows for which the trigger would fire. This clause is valid only for row-level triggers.
+## QUESTIONS
 
----
-
-## 1. PROCEDURE
-
-### QUESTION
+### PROCEDURE
 
 1. Write a PL/SQL program to generate Fibonacci series using a procedure
 
-### ALGORITHM
+#### ALGORITHM
 
 **Step 1:** Start
 
@@ -158,58 +109,7 @@ Where:
 
 **Step 5:** Stop
 
-# PROGRAM
-
-```sql
-SQL> CREATE OR REPLACE PROCEDURE FIB(N IN NUMBER)
- 2 IS
- 3 A NUMBER(5):=0;
- 4 B NUMBER(3):=1;
- 5 C NUMBER(3);
- 6 T NUMBER(5);
- 7 VAL NUMBER(5):=0;
- 8 BEGIN
- 9 DBMS_OUTPUT.PUT_LINE('FIBONACCI SERIES IS:');
- 10 DBMS_OUTPUT.PUT_LINE(A);
- 11 DBMS_OUTPUT.PUT_LINE(B);
- 12 WHILE VAL!=N-2
- 13 LOOP
- 14 C:=A+B;
- 15 DBMS_OUTPUT.PUT_LINE(C);
- 16 T:=B;
- 17 B:=C;
- 18 A:=T;
- 19 VAL:=VAL+1;
- 20 END LOOP;
- 21 END;
- 22 /
-```
-
-# OUTPUT
-
-```
-SQL> SET SERVEROUTPUT ON
-SQL> DECLARE F NUMBER(5):=&LIMIT;
-2 BEGIN FIB(F);
-3 END;
-4 /
-OUTPUT
-Enter value for limit: 6
-old 2: F NUMBER(5):=&LIMIT;
-new 2: F NUMBER(5):=6;
-FIBONACCI SERIES IS:
-0
-1
-1
-2
-3
-5
-PL/SQL procedure successfully completed.
-```
-
-## 2. FUNCTION
-
-### QUESTION
+### Functions
 
 1. Write a PL/SQL program to display Nth prime number using function 
 
@@ -241,7 +141,66 @@ PL/SQL procedure successfully completed.
      
 **Step 4:** Stop
 
-# PROGRAM
+### Trigger
+
+---
+
+## OUTPUT
+
+### PROCEDURE
+
+#### PROGRAM
+
+```sql
+SQL> CREATE OR REPLACE PROCEDURE FIB(N IN NUMBER)
+ 2 IS
+ 3 A NUMBER(5):=0;
+ 4 B NUMBER(3):=1;
+ 5 C NUMBER(3);
+ 6 T NUMBER(5);
+ 7 VAL NUMBER(5):=0;
+ 8 BEGIN
+ 9 DBMS_OUTPUT.PUT_LINE('FIBONACCI SERIES IS:');
+ 10 DBMS_OUTPUT.PUT_LINE(A);
+ 11 DBMS_OUTPUT.PUT_LINE(B);
+ 12 WHILE VAL!=N-2
+ 13 LOOP
+ 14 C:=A+B;
+ 15 DBMS_OUTPUT.PUT_LINE(C);
+ 16 T:=B;
+ 17 B:=C;
+ 18 A:=T;
+ 19 VAL:=VAL+1;
+ 20 END LOOP;
+ 21 END;
+ 22 /
+```
+
+#### OUTPUT
+
+```
+SQL> SET SERVEROUTPUT ON
+SQL> DECLARE F NUMBER(5):=&LIMIT;
+2 BEGIN FIB(F);
+3 END;
+4 /
+OUTPUT
+Enter value for limit: 6
+old 2: F NUMBER(5):=&LIMIT;
+new 2: F NUMBER(5):=6;
+FIBONACCI SERIES IS:
+0
+1
+1
+2
+3
+5
+PL/SQL procedure successfully completed.
+```
+
+### FUNCTION
+
+#### PROGRAM
 
 ```sql
 SQL> CREATE OR REPLACE FUNCTION PMN(N IN NUMBER) RETURN NUMBER
@@ -271,7 +230,7 @@ SQL> CREATE OR REPLACE FUNCTION PMN(N IN NUMBER) RETURN NUMBER
  25 / 
 
 ```
-# OUTPUT
+#### OUTPUT
 
 ```sql
 SQL> SET SERVEROUTPUT ON
