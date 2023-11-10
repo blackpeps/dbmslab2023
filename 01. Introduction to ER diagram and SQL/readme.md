@@ -5,7 +5,7 @@
 - Thories should be written on the right side. (This will be mentioned at the beginning of the topic.)
 - Figures should be on the left side.
 - No **AIM, OUTPUT** IN THIS EXPERIMENT.
-
+Ramji private limited🐍🐍🐍
 ---
 
 > Right side
