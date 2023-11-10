@@ -7,7 +7,7 @@
 - No **AIM, OUTPUT** IN THIS EXPERIMENT.
 🐍🐍🐍🐍🐍Ramji private limited🐍🐍🐍🐍🐍🐍
 ---
-
+oru branthante prahasanam🥸🥸🥸🥸
 > Right side
 
 The **ER model**, also known as **Entity-Relationship model (ERD)**, is a high-level data model used to depict the relationships among entity sets stored in a database. This model defines the data elements and relationships within a specific system, providing a logical structure for databases.
