@@ -27,21 +27,29 @@ The package body has the codes for various methods declared in the package speci
 **Package Specification**
 
 Step 1: Start
+
 Step 2: Create a package and create a method for finding the salary of an employee whose id is given by the user
+
 Step 3: Stop
 
 **Package Body**
 
 Step 1: Start
+
 Step 2: Declaration of package body for the created package
+
 Step 3: Check whether the entered id is equal to the id from table customer21, then display the salary of the given employee
+
 Step 4: Stop
 
 **Using the package elements**
 
 Step 1: Start
+
 Step 2: Enter the employee id by the user
+
 Step 3: Call the method for finding the salary using the package
+
 Step 4: Stop
 
 ## PROGRAM
@@ -105,7 +113,6 @@ Salary: 50000
 PL/SQL procedure successfully completed.
 
 ```
-
 
 ## Question
 
