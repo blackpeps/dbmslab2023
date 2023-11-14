@@ -6,95 +6,121 @@ To Implement various control structures like IF-THEN, IF-THEN-ELSE, IF-THEN ELSI
 
 ## Theory
 
-## Introduction to PL/SQL
+### Introduction to PL/SQL
 
 PL/SQL is a block-structured language used in Oracle, tightly integrated with the database. It supports multiple nested blocks and extends SQL with additional programming constraints.
 
-## Features of PL/SQL
+### Features of PL/SQL
 
 PL/SQL features include tight SQL integration, robust error checking, diverse data types, versatile programming structures, support for structured and object-oriented programming, and web application development.
 
-## Advantages of PL/SQL
+### Advantages of PL/SQL
 
-PL/SQL offers numerous advantages, including strong SQL integration, reduced network traffic, high programmer productivity, time savings through features like exception handling and encapsulation, portability, high security, access to predefined SQL packages, support for object-oriented programming, and web application development.
+  - Strong SQL integration
+  - Reduced network traffic
+  - High programmer productivity
+  - Time savings with features like exception handling and encapsulation
+  - Portability and high security
+  - Access to predefined SQL packages
+  - Support for object-oriented programming
+  - Facilitates web application development
 
-## Basic Syntax
+### Basic Syntax
 
-Basic Syntax of PL/SQL, a block-structured language, consists of three subparts –
-1. **Declarations**: This section starts with the keyword DECLARE and defines all variables, cursors, subprograms, and other elements to be used in the program.
-2. **Executable Commands**: This section is enclosed between the keywords BEGIN and END and consists of the executable PL/SQL statements of the program.
-3. **Exception Handling**: This section starts with the keyword EXCEPTION and contains exception(s) that handle errors in the program.
+- PL/SQL Basic Syntax:
+  1. **Declarations**: Start with DECLARE, defining variables, cursors, subprograms, etc.
+  2. **Executable Commands**: Enclosed between BEGIN and END, holds executable PL/SQL statements.
+  3. **Exception Handling**: Starts with EXCEPTION, and contains error-handling exceptions.
 
-Every PL/SQL statement ends with a semicolon (;). PL/SQL blocks can be nested within other PL/SQL blocks using BEGIN and END. Following is the basic structure of a PL/SQL block –
-```plsql
-DECLARE
-<declaration section>
-BEGIN
-<executable command(s)
-EXCEPTION
-<exception handling>
-END;
-```
+- PL/SQL Statement End: Each ends with a semicolon (;).
+- Nesting: Blocks can nest using BEGIN and END.
+- Basic Block Structure:
+  ```plsql
+  DECLARE
+  <declaration section>
+  BEGIN
+  <executable command(s)>
+  EXCEPTION
+  <exception handling>
+  END;
+  ```
 
-## PL/SQL Comments
+### PL/SQL Comments
 
 - Single-line (--) and multi-line (/* */) comments to explain code.
 
-## PL/SQL Identifiers
+### PL/SQL Identifiers
 
 - Constants, variables, exceptions, procedures, and cursors.
 - Letters, numerals, $, _, and #, up to 30 characters.
 - Not case-sensitive, except for reserved keywords.
 
-## Decision-Making Statements
+---
 
-Decision-making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is true, and optionally, other statements to be executed if the condition is false.
+### Implementation of various control structures using PL/SQL
+ 
+#### Decision-Making Statements
 
-### 1. IF - THEN statement
+- Specify condition(s) for evaluation.
+- Execute statement(s) if true.
+- Optionally, execute other statement(s) if false.
 
-The IF statement associates a condition with a sequence of statements enclosed by the keywords THEN and END IF. If the condition is true, the statements get executed, and if the condition is false or NULL, then the IF statement does nothing.
+##### 1. IF - THEN statement
 
-### 2. IF-THEN-ELSE statement
+- Associates condition with statements between THEN and END IF.
+- Executes statements if the condition is true.
+- Does nothing if the condition is false or NULL.
 
-The IF statement adds the keyword ELSE followed by an alternative sequence of statements. If the condition is false or NULL, then only the alternative statement sequence gets executed. It ensures that either of the sequence of statements is executed.
+##### 2. IF-THEN-ELSE statement
 
-### 3. IF-THEN-ELSIF statement
+  - Adds ELSE with an alternative statement sequence.
+  - Executes the alternative sequence if the condition is false or NULL.
+  - Ensures execution of either statement sequence.
 
-It allows you to choose between several alternatives.
+##### 3. IF-THEN-ELSIF statement
 
-### 4. Case Statement
+- It allows you to choose between several alternatives.
 
-Like the IF statement, the CASE statement selects one sequence of statements to execute. However, to select the sequence, the CASE statement uses a selector rather than multiple Boolean expressions. A selector is an expression whose value is used to select one of several alternatives.
+##### 4. Case Statement
 
-### 5. Searched CASE statement
+- Selects a statement sequence based on a selector.
+- Uses the value of the selector to determine the sequence.
+- Employs an expression to choose from multiple alternatives.
 
-The searched CASE statement has no selector, and its WHEN clauses contain search conditions that yield Boolean values.
+##### 5. Searched CASE statement
 
-### 6. Nested IF-THEN-ELSE
+- Lacks a selector.
+- WHEN clauses have search conditions producing Boolean values.
 
-Use one IF-THEN or IF-THEN-ELSIF statement inside another IF-THEN or IF-THEN-ELSIF statement(s).
+##### 6. Nested IF-THEN-ELSE
 
-# Looping Statements
+- Place one inside another for complex conditions.
+- Enhances decision-making flexibility.
 
-A loop statement allows us to execute a statement or group of statements multiple times.
+#### Looping Statements
 
-## Loop Type & Description
+- Enables repeated execution of a statement or group.
+- Supports efficient handling of repetitive tasks.
 
-### 1. PL/SQL Basic LOOP
+##### 1. PL/SQL Basic LOOP
 
-In this loop structure, a sequence of statements is enclosed between the LOOP and the END LOOP statements. At each iteration, the sequence of statements is executed, and then control resumes at the top of the loop.
+- Statements enclosed between LOOP and END LOOP.
+- Executed iteratively; control returns to the loop's top at each iteration.
 
-### 2. PL/SQL WHILE LOOP
+##### 2. PL/SQL WHILE LOOP
 
-Repeats a statement or group of statements while a given condition is true. It tests the condition before executing the loop body.
+- Repeats statements while a specified condition is true.
+- Tests condition before executing the loop body.
 
-### 3. PL/SQL FOR LOOP
+##### 3. PL/SQL FOR LOOP
 
-Execute a sequence of statements multiple times and abbreviate the code that manages the loop variable.
+- Executes statements iteratively.
+- Simplifies loop variable management.
 
-### 4. Nested loops in PL/SQL
+##### 4. Nested loops in PL/SQL
 
-Use one or more loops inside any other basic loop, while, or for loop.
+- Employ one or more loops inside another loop.
+- Enhances control flow for complex scenarios.
 
 ---
 
@@ -102,7 +128,7 @@ Use one or more loops inside any other basic loop, while, or for loop.
 
 - Question(s) on right side
 - Algorithm on the right side
-- Program/Output as it is print, on the left side.
+- Program/Output as it is printed, on the left side.
 - **PROGRAM NEED NOT BE WRITTEN ON FAIR RECORD**
 
 - Write the following as sections on each page (total of 7 programs)
@@ -150,6 +176,8 @@ new 3: B NUMBER(4):=22;
 THE SUM OF TWO NUMBER IS:50
 PL/SQL procedure successfully completed.
 ```
+
+---
 
 ---
 
