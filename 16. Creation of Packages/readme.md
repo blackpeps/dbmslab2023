@@ -28,11 +28,13 @@ A package will have two mandatory parts –
   - Includes private declarations hidden from outside code.
   - Created using the `CREATE PACKAGE BODY` statement.
 
-## QUESTION
+## QUESTIONS
 
-1. Create a package for the table customers
+### Question 1
 
-### ALGORITHM
+**1. Create a package for the table customers**
+
+#### ALGORITHM
 
 **Package Specification**
 
@@ -62,7 +64,51 @@ Step 3: Call the method for finding the salary using the package
 
 Step 4: Stop
 
-### PROGRAM
+### Question 2
+
+**2. Create a PL/SQL Package with addition and subtraction**
+
+#### ALGORITHM
+
+**Package Specification**
+
+Step 1: Start
+
+Step 2: Create a package named `MathOperations` and define two functions within the package, `Addition` and `Subtraction`.
+
+Step 3: Stop
+
+**Package Body**
+
+Step 1: Start
+
+Step 2: Create a package body for `MathOperations`
+
+Step 3: Implement the `Addition` and `Subtraction` functions that do basic addition and subtraction and return the result to the function itself.
+
+Step 4: Stop
+
+**Using the package elements**
+
+Step 1: Start
+
+Step 2: After declaring the necessary variables, values are passed to the functions and the result is displayed.
+
+Step 3: Stop
+
+**Using the package elements with user input**
+
+Step 1: Start
+
+Step 2: After declaring the necessary variables, the user is prompted to enter the necessary values for the variables.
+
+Step 3: After calculations, the result is displayed.
+
+Step 4: Stop
+
+## OUTPUT
+
+### QUESTION 1
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -103,17 +149,9 @@ SQL> DECLARE
 Salary: 50000
 
 PL/SQL procedure successfully completed.
-
 ```
 
----
-
-## Practise Question
-
-> No need to write in the fair record, just try it yourself.
-
-2. Create a PL/SQL Package with addition and subtraction
-
+### QUESTION 2
 
 ```sql
  CREATE OR REPLACE PACKAGE MathOperations AS
