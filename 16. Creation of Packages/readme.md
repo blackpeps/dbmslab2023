@@ -1,7 +1,10 @@
-## 16. Creation of Packages
+# 16. Creation of Packages
 
+## AIM
 
-## To create a package in PL/SQL
+To create a package in PL/SQL
+
+## Theory
 
 Packages are schema objects that group logically related PL/SQL types, variables, and subprograms.
 
@@ -12,11 +15,18 @@ A package will have two mandatory parts –
 
 ### 1. Package Specification
 
-The specification is the interface to the package. It just DECLARES the types, variables, constants, exceptions, cursors, and subprograms that can be referenced from outside the package. In other words, it contains all information about the content of the package but excludes the code for the subprograms. All objects placed in the specification are called public objects. Any subprogram not in the package specification but coded in the package body is called a private object.
+  - Interface to the package.
+  - DECLARES types, variables, constants, exceptions, cursors, and subprograms.
+  - Referenced from outside the package.
+  - Contains information, excludes subprogram code.
+  - Public objects are those in the specification.
+  - Subprograms in the body without specification are private objects.
 
 ### 2. Package Body
 
-The package body has the codes for various methods declared in the package specification and other private declarations, which are hidden from the code outside the package. The `CREATE PACKAGE BODY` Statement is used for creating the package body.
+  - Contains codes for methods in the package specification.
+  - Includes private declarations hidden from outside code.
+  - Created using the `CREATE PACKAGE BODY` statement.
 
 ## QUESTION
 
@@ -52,25 +62,7 @@ Step 3: Call the method for finding the salary using the package
 
 Step 4: Stop
 
-## PROGRAM
-
-```sql
-SQL> select*from customer;
-
-NAME
---------------------------------------------------------------------------------
-        ID     SALARY
----------- ----------
-John Doe
-         1      50000
-
-Jane Smith
-         2      60000
-
-Mike Johnson
-         3      70000
-
-```
+### PROGRAM
 
 ```sql
 SQL> SET SERVEROUTPUT ON
@@ -114,9 +106,15 @@ PL/SQL procedure successfully completed.
 
 ```
 
-## Question
+---
+
+## Practise Question
+
+> No need to write in the fair record, just try it yourself.
 
 2. Create a PL/SQL Package with addition and subtraction
+
+
 ```sql
  CREATE OR REPLACE PACKAGE MathOperations AS
   2      FUNCTION Addition(a IN NUMBER, b IN NUMBER) RETURN NUMBER;
