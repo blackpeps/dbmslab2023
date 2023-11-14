@@ -163,11 +163,11 @@ END;
 
 **Step 3:** Repeat loop until I=100
 
-  **3:1** Check if I%J=0 then set C=C+1
+-  **3:1** Check if I%J=0 then set C=C+1
      
-  **3:2** If C=2 then set P as P+1
+-  **3:2** If C=2 then set P as P+1
      
-  **3:3** Check if P=N then return i
+-  **3:3** Check if P=N then return i
      
 **Step 4:** Stop
 
