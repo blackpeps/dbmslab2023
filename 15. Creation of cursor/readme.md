@@ -3,16 +3,25 @@
 ## AIM
 To create a cursor in PL/SQL.
 
-## Introduction
-A cursor is a pointer to this context area. PL/SQL controls the context area through a cursor. A cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is referred to as the active set.
+## Theory
+
+  - Pointer to a context area.
+  - Controlled by PL/SQL to manage data.
+  - Holds rows (one or more) from an SQL statement.
+  - The set of rows it holds is the active set.
 
 ### Types of Cursors
 There are two types of cursors:
 1. **Implicit Cursors**
-   - Implicit cursors are automatically created by Oracle whenever an SQL statement is executed when there is no explicit cursor for the statement.
-   - Programmers cannot control the implicit cursors and the information in them.
-   
-   Whenever a DML statement (INSERT, UPDATE, and DELETE) is issued, an implicit cursor is associated with this statement. For INSERT operations, the cursor holds the data that needs to be inserted. For UPDATE and DELETE operations, the cursor identifies the rows that would be affected.
+
+  - Automatically created by Oracle for SQL statements.
+  - No explicit control by programmers.
+  - Associated with DML statements (INSERT, UPDATE, DELETE).
+  - For INSERT, the cursor holds data to be inserted.
+  - For UPDATE/DELETE, the cursor identifies affected rows.
+  - Attributes are `%FOUND`, `%NOTFOUND`, `%ISOPEN` and `%ROWCOUNT`.
+
+> No need for the below table to be written in the fair record.
 
    | S.NO | ATTRIBUTES & DESCRIPTION      |
    | ---- | ----------------------------- |
@@ -26,21 +35,25 @@ There are two types of cursors:
    |      | Returns the number of rows affected by an INSERT, UPDATE, or DELETE statement, or returned by a SELECT INTO statement |
 
 2. **Explicit Cursors**
-   - Explicit cursors are programmer-defined cursors for gaining more control over the context area.
-   - An explicit cursor should be defined in the declaration section of the PL/SQL Block.
-   - It is created on a SELECT Statement that returns more than one row.
 
-   The syntax for creating an explicit cursor is:
-   ```sql
-   CURSOR cursor_name IS select_statement;
-   ```
+  - Programmer-defined for more control.
+  - Defined in the declaration section.
+  - Created for SELECT statements returning multiple rows.
+
+  Syntax:
+  ```sql
+  CURSOR cursor_name IS select_statement;
+  ```
 
 ## Working with Explicit Cursors
-Working with an explicit cursor includes the following steps:
-1. Declaring the cursor for initializing the memory
-2. Opening the cursor for allocating the memory
-3. Fetching the cursor for retrieving the data
-4. Closing the cursor to release the allocated memory
+
+1. **Declare Cursor:** Initialize memory for the cursor.
+
+2. **Open Cursor:** Allocate memory resources.
+
+3. **Fetch Cursor:** Retrieve data from the cursor.
+
+4. **Close Cursor:** Release allocated memory resources.
 
 ### 2.1 Declaring the Cursor
 Declaring the cursor defines the cursor with a name and the associated SELECT statement.
@@ -68,7 +81,7 @@ CLOSE c_customers;
 
 ## QUESTIONS
 
-### 1. To write a PL/SQL program to display customer id, name, designation, and salary of employees whose salary is greater than 28000 from the customer table using a cursor
+1. To write a PL/SQL program to display customer id, name, designation, and salary of employees whose salary is greater than 28000 from the customer table using a cursor
 
 **ALGORITHM**
 1. Start
@@ -77,6 +90,20 @@ CLOSE c_customers;
 4. Repeat the loop while data is found
    4.1 Check if the salary is greater than 28000, then display id, name, designation, and salary of the employee
 5. Stop
+
+2. To write a PL/SQL program to display customer id, name, designation, and salary of employees whose salary is greater than 28000 from the customer table using a cursor
+
+**ALGORITHM**
+1. Start
+2. Create a cursor and select employee id, name, department, designation, and salary from the customer table
+3. Read department number
+4. Fetching the cursor into employee number, name, department, designation, and salary
+5. Repeat while data is found
+   5.1 If the department number from the table is equal to the department number entered by the user, then display employee details
+6. Close the cursor
+7. Stop
+
+## QUESTIONS
 
 **PROGRAM**
 ```sql
@@ -111,17 +138,6 @@ SQL> DECLARE
 PL/SQL procedure successfully completed.
 ```
 
-### 2. To write a PL/SQL program to display customer id, name, designation, and salary of employees whose salary is greater than 28000 from the customer table using a cursor
-
-**ALGORITHM**
-1. Start
-2. Create a cursor and select employee id, name, department, designation, and salary from the customer table
-3. Read department number
-4. Fetching the cursor into employee number, name, department, designation, and salary
-5. Repeat while data is found
-   5.1 If the department number from the table is equal to the department number entered by the user, then display employee details
-6. Close the cursor
-7. Stop
 
 **PROGRAM**
 ```sql
@@ -163,7 +179,11 @@ new 8: DP NUMBER:=1;
 PL/SQL procedure successfully completed.
 ```
 
-### 3. To write a Cursor to display the list of 10 highest-paid Employees and their Total Salary
+---
+
+## Practise Question
+
+3. To write a Cursor to display the list of 10 highest-paid Employees and their Total Salary
 
 **PROGRAM**
 ```sql
