@@ -1,6 +1,6 @@
 ## 11. Implementation of DCL commands for granting and revoking user privileges.
 
-## Aim hi guyss:::::
+## Aim
 
 To implement DCL commands for granting and revoking user privileges.
 
