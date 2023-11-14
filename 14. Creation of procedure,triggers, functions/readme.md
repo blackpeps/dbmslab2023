@@ -2,64 +2,91 @@
 
 ## AIM
 
-To create procedure, triggers, and functions.
+To create procedures, triggers, and functions.
 
 ## THEORY
 
 ### Procedures
 
-A subprogram is a modular unit that performs a specific task and is used in larger programs, known as modular design. Subprograms can be called by other subprograms or programs. At the schema level, subprograms can be standalone or packaged, created with `CREATE PROCEDURE` or `CREATE FUNCTION`, and deleted with `DROP PROCEDURE` or `DROP FUNCTION`. In PL/SQL, subprograms are named blocks invoked with parameters. PL/SQL offers two types: Functions (return a value) and Procedures (perform actions without direct return).
+- Subprogram in Modular Design:
+  - Program unit/module for a specific task.
+  - Combined for larger programs in 'Modular design.'
+  - Invoked by another subprogram or program (calling program).
+
+- Standalone Schema-level subprogram:
+  - Created with `CREATE PROCEDURE` or `CREATE FUNCTION`.
+  - Stored in the database, deletable with `DROP PROCEDURE` or `DROP FUNCTION`.
+
+- Packaged subprogram:
+  - Created within a package.
+  - Stored in the database, deletable only with the package using `DROP PACKAGE`.
 
 #### 1.1 Creating a Procedure
 
-A procedure is created with the `CREATE OR REPLACE PROCEDURE` statement. The simplified syntax for the `CREATE OR REPLACE PROCEDURE` statement is as follows:
-
-```sql
-CREATE [OR REPLACE] PROCEDURE procedure_name[(parameter_name [IN | OUT | IN OUT] type [, ...])]
-{IS | AS}
-BEGIN
- < procedure_body >
-END procedure_name;
-```
+  - Use `CREATE OR REPLACE PROCEDURE` statement.
+  - Syntax:
+    ```sql
+    CREATE [OR REPLACE] PROCEDURE procedure_name
+    [(parameter_name [IN | OUT | IN OUT] type [, ...])]
+    {IS | AS}
+    BEGIN
+     < procedure_body >
+    END procedure_name;
+    ```
 
 #### 1.2 Deleting a Standalone Procedure
 
-A standalone procedure is deleted with the `DROP PROCEDURE` statement. Syntax for deleting a procedure is:
-
-```sql
-DROP PROCEDURE procedure-name;
-```
+  - Use `DROP PROCEDURE` statement.
+  - Syntax:
+    ```sql
+    DROP PROCEDURE procedure_name;
+    ```
 
 #### 1.3 Parameter modes in PL/SQL subprograms:
 
-1. **IN**: Read-only parameter; passed by reference. Accepts constants, literals, initialized variables, or expressions. Can be initialized with a default value but is omitted if not provided.
+- **IN Parameter**:
+  - Read-only; passed by reference.
+  - Accepts constants, literals, initialized variables, or expressions.
+  - Can have a default value; omitted if not provided.
 
-2. **OUT**: Returns a value to the calling program; acts like a variable. Value can be changed and referenced after assignment. Actual parameter must be a variable and is passed by value.
+- **OUT Parameter**:
+  - Returns a value to the calling program.
+  - Acts like a variable; value can be changed and referenced after assignment.
+  - Actual parameter must be a variable; passed by value.
 
-3. **IN OUT**: Passes an initial value to a subprogram and returns an updated value to the caller. Can be assigned and read. Actual parameter must be a variable; passed by value.
+- **IN OUT Parameter**:
+  - Passes an initial value and returns an updated value.
+  - Can be assigned and read.
+  - Actual parameter must be a variable; passed by value.
 
 ### 2. Function
 
 #### 2.1 Creating a Function
 
-A standalone function is created using the `CREATE FUNCTION` statement. The simplified syntax for the `CREATE OR REPLACE FUNCTION` statement is as follows:
-
-```sql
-CREATE [OR REPLACE] FUNCTION function_name [(parameter_name [IN | OUT | IN OUT] type [, ...])]
-RETURN return_datatype
-{IS | AS}
-BEGIN
- < function_body >
-END [function_name];
-```
+  - Use `CREATE OR REPLACE FUNCTION` statement.
+  - Syntax:
+    ```sql
+    CREATE [OR REPLACE] FUNCTION function_name
+    [(parameter_name [IN | OUT | IN OUT] type [, ...])]
+    RETURN return_datatype
+    {IS | AS}
+    BEGIN
+     < function_body >
+    END [function_name];
+    ```
 
 #### 2.2 Calling a Function
 
-Functions are defined for specific tasks. To use a function, you call it in your program, transferring control to the function. The function performs its task and returns control to the main program when it encounters a return statement or reaches the last "END" statement.
+  - Defined for specific tasks.
+  - Called in the program, transferring control to the function.
+  - Performs its task and returns control.
+  - Control returns on encountering a return statement or reaching the last "END" statement.
 
 ### 3. Trigger
 
-Triggers are stored programs, which are automatically executed or fired when some events occur. Triggers can be defined on the table, view, schema, or database with which the event is associated.
+  - Stored programs.
+  - Automatically executed when events occur.
+  - Defined on tables, views, schemas, or databases associated with the event.
 
 #### 3.1 Creating Triggers
 
@@ -80,7 +107,7 @@ END;
 
 ### PROCEDURE
 
-1. Write a PL/SQL program to generate Fibonacci series using a procedure
+1. Write a PL/SQL program to generate the Fibonacci series using a procedure
 
 #### ALGORITHM
 
@@ -111,9 +138,9 @@ END;
 
 ### Functions
 
-1. Write a PL/SQL program to display Nth prime number using function 
+2. Write a PL/SQL program to display the Nth prime number using the function 
 
-### ALGORITHM
+#### ALGORITHM
 
 **Step 1:** Start
 
@@ -142,6 +169,33 @@ END;
 **Step 4:** Stop
 
 ### Trigger
+
+3. Create a table customer21 and Write a PL/SQL program to display the salary difference of an employee in the customer table using a trigger.
+
+| ID    | NAME   | AGE | CITY      | DEP | DESG      | SAL   |
+|-------|--------|-----|-----------|-----|-----------|-------|
+| 7001  | Sethu  | 33  | Wayanad   | 31  | Developer | 35000 |
+| 9001  | Jaya   | 34  | Pandalam  | 31  | Designer  | 30000 |
+| 10001 | Heeral | 37  | Kollam    | 31  | Clerk     | 25000 |
+| 10011 | Rimal  | 28  | Pala      | 31  | Designer  | 27000 |
+| 10021 | Janil  | 39  | Kottayam  | 31  | Tester    | 20000 |
+| 10031 | Hari   | 40  | TVM       | 31  | Manager   | 67000 | 
+
+#### ALGORITHM
+
+**Step 1:** Start
+
+**Step 2:** Create a trigger for the customer21 table that fires for insert, update or delete operation to display the salary difference
+
+**Step 3:** Inserting a new employee
+
+**Step 4:** Modify the salary
+
+**Step 5:** Calculate the salary difference
+
+**Step 6:** Display the difference
+
+**Step 7:** Stop
 
 ---
 
@@ -250,42 +304,9 @@ new 2: NO NUMBER(5):=10;
 PL/SQL procedure successfully completed.
 ```
 
-## 3. TRIGGER
+### 3. TRIGGER
 
-### QUESTION
-
-1. Create a table customer21 with the following fields.
-
-| ID    | NAME   | AGE | CITY      | DEP | DESG      | SAL   |
-|-------|--------|-----|-----------|-----|-----------|-------|
-| 7001  | Sethu  | 33  | Wayanad   | 31  | Developer | 35000 |
-| 9001  | Jaya   | 34  | Pandalam  | 31  | Designer  | 30000 |
-| 10001 | Heeral | 37  | Kollam    | 31  | Clerk     | 25000 |
-| 10011 | Rimal  | 28  | Pala      | 31  | Designer  | 27000 |
-| 10021 | Janil  | 39  | Kottayam  | 31  | Tester    | 20000 |
-| 10031 | Hari   | 40  | TVM       | 31  | Manager   | 67000 |
-
-## Practise Question
-
-2. Write a PL/SQL program to display the salary difference of an employee in the customer table using a trigger
-
-### ALGORITHM
-
-**Step 1:** Start
-
-**Step 2:** Create a trigger for the customer21 table that fires for insert or update or delete operation to display the salary difference
-
-**Step 3:** Inserting a new employee
-
-**Step 4:** Modify the salary
-
-**Step 5:** Calculate the salary difference
-
-**Step 6:** Display the difference
-
-**Step 7:** Stop
-
-# PROGRAM
+#### PROGRAM
 
 ```sql
 1) SQL> CREATE TABLE CUSTOMER21(ID NUMBER,NAME VARCHAR(50),AGE NUMBER,CITY VARCHAR(50),DEP NUMBER,DESG VARCHAR(50),SAL NUMBER);
@@ -317,7 +338,7 @@ SQL> CREATE OR REPLACE TRIGGER DISPLAY_SALARY_CHANGES BEFORE DELETE OR INSERT OR
 Trigger created.
 ```
 
-# OUTPUT
+#### OUTPUT
 
 ```sql
 SQL> INSERT INTO CUSTOMER21 VALUES('780','NEERAV',21,'TVM',2,'GM',80000);
