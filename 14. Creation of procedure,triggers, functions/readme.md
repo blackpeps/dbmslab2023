@@ -130,8 +130,11 @@ END;
 **Step 4:** Repeat until `VAL != N-2`
 
 - **4:1** Calculate `C = A + B`
+
 - **4:2** Display `C`
+
 - **4:3** Perform swapping
+
 - **4:4** Set `VAL` as `VAL + 1`
 
 **Step 5:** Stop
