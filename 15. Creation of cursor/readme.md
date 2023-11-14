@@ -45,7 +45,7 @@ There are two types of cursors:
   CURSOR cursor_name IS select_statement;
   ```
 
-## Working with Explicit Cursors
+### Working with Explicit Cursors
 
 1. **Declare Cursor:** Initialize memory for the cursor.
 
@@ -103,7 +103,7 @@ CLOSE c_customers;
 6. Close the cursor
 7. Stop
 
-## QUESTIONS
+## OUTPUTS
 
 **PROGRAM**
 ```sql
