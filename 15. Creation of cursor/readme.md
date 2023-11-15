@@ -91,7 +91,7 @@ CLOSE c_customers;
    4.1 Check if the salary is greater than 28000, then display id, name, designation, and salary of the employee
 5. Stop
 
-
+---
 
 2. To write a PL/SQL program to display customer id, name, designation, and salary of employees whose salary is greater than 28000 from the customer table using a cursor
 
