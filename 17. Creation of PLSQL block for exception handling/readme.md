@@ -3,8 +3,8 @@
 ## AIM
 To create a PL/SQL block for exception handling.
 
-## Introduction
-An exception is an error condition during a program execution. PL/SQL supports programmers to catch such conditions using EXCEPTION block in the program, and an appropriate action is taken against the error condition.
+## THEORY
+An exception is an error condition during a program execution. PL/SQL supports programmers in catching such conditions using the EXCEPTION block in the program, and appropriate action is taken against the error condition.
 
 There are two types of exceptions:
 1. System-defined exceptions
@@ -126,66 +126,93 @@ PL/SQL procedure successfully completed.
 
 **PROGRAM**
 ```sql
-SQL> SET SERVEROUTPUT ON
 SQL> DECLARE
-2 A INT := &NUM1;
-3 B INT := &NUM2;
-4 ANSWER INT;
-5 BEGIN
-6 ANSWER := A / B;
-7 DBMS_OUTPUT.PUT_LINE('THE RESULT AFTER DIVISION IS: ' || ANSWER);
-8 EXCEPTION
-9 WHEN ZERO_DIVIDE THEN
-10 DBMS_OUTPUT.PUT_LINE('DIVIDING BY ZERO PLEASE CHECK THE VALUES AGAIN');
-11 DBMS_OUTPUT.PUT_LINE('THE VALUE OF A IS ' || A);
-12 DBMS_OUTPUT.PUT_LINE('THE VALUE OF B IS ' || B);
-13 END;
-14 /
+  2  A NUMBER(4):=&NUM1;
+  3  B NUMBER(4):=&NUM2;
+  4  ANS NUMBER(8):=0;
+  5  ZERO_DIVIDE EXCEPTION;
+  6  BEGIN
+  7  IF B=0 THEN
+  8  RAISE ZERO_DIVIDE;
+  9  ELSE
+ 10  ANS:=A/B;
+ 11  DBMS_OUTPUT.PUT_LINE('RESULT: '||ANS);
+ 12  END IF;
+ 13  EXCEPTION
+ 14  WHEN ZERO_DIVIDE THEN
+ 15  DBMS_OUTPUT.PUT_LINE('DIVIDE BY ZERO NOT POSSIBLE');
+ 16  END;
+ 17  /
 ```
 
 **OUTPUT**
 ```
-Enter value for num1: 25
-old 2: A INT := &NUM1;
-new 2: A INT := 25;
+Enter value for num1: 0
+old   2: A NUMBER(4):=&NUM1;
+new   2: A NUMBER(4):=0;
 Enter value for num2: 5
-old 3: B INT := &NUM2;
-new 3: B INT := 5;
-THE RESULT AFTER DIVISION IS: 5
+old   3: B NUMBER(4):=&NUM2;
+new   3: B NUMBER(4):=5;
+RESULT: 0
 PL/SQL procedure successfully completed.
 ```
 
 ```
-Enter value for num1: 25
-old 2: A INT := &NUM1;
-new 2: A INT := 25;
+Enter value for num1: 7
+old   2: A NUMBER(4):=&NUM1;
+new   2: A NUMBER(4):=7;
 Enter value for num2: 0
-old 3: B INT := &NUM2;
-new 3: B INT := 0;
-DIVIDING BY ZERO PLEASE CHECK THE VALUES AGAIN
-THE VALUE OF A IS 25
-THE VALUE OF B IS 0
+old   3: B NUMBER(4):=&NUM2;
+new   3: B NUMBER(4):=0;
+DIVIDE BY ZERO NOT POSSIBLE
 PL/SQL procedure successfully completed.
 ```
 
 ### 3. Write a PL/SQL block to handle the following BUILT-IN EXCEPTIONS.
 
+**PROGRAM**
+
+```sql
+CREATE TABLE CUSTOMER17 (ID NUMBER, NAME VARCHAR(50), AGE NUMBER);
+INSERT INTO CUSTOMER17 VALUES (1, 'MEENA', 22);
+INSERT INTO CUSTOMER17 VALUES (2, 'REENA', 22);
+INSERT INTO CUSTOMER17 VALUES (3, 'VEENA', 20);
+INSERT INTO CUSTOMER17 VALUES (3, 'BEENA', 21);
+```
 ```sql
 DECLARE
-    M NUMBER(4);
-    MYERROR EXCEPTION;
+	E_ID NUMBER:=&EID;
+	M NUMBER(4);
+	NULL_ERROR EXCEPTION;
 BEGIN
-    SELECT COMM INTO M FROM EMP WHERE EMPNO = 7839;
-    IF M IS NULL THEN
-        RAISE MYERROR;
-    END IF;
+	SELECT AGE INTO M FROM CUSTOMER17 WHERE ID=E_ID;
+	IF M IS NULL THEN
+		RAISE NULL_ERROR;
+	END IF;
 EXCEPTION
-    WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('ERROR OF DATA');
-    WHEN TOO_MANY_ROWS THEN
-        DBMS_OUTPUT.PUT_LINE('ERROR OF TOO MANY ROWS');
-    WHEN MYERROR THEN
-        DBMS_OUTPUT.PUT_LINE('ERROR FOUND NULL');
+	WHEN NO_DATA_FOUND THEN
+		DBMS_OUTPUT.PUT_LINE('NO SUCH DATA FOUND');
+	WHEN TOO_MANY_ROWS THEN
+		DBMS_OUTPUT.PUT_LINE('MANY ROWS PRESENT');
+	WHEN NULL_ERROR THEN
+		DBMS_OUTPUT.PUT_LINE('ERROR DUE TO NULL');
 END;
 /
+```
+
+**OUTPUT**
+
+```sql
+Enter value for eid: 3
+old   2:        E_ID NUMBER:=&EID;
+new   2:        E_ID NUMBER:=3;
+MANY ROWS PRESENT
+PL/SQL procedure successfully completed.
+```
+```sql
+Enter value for eid: 4
+old   2:        E_ID NUMBER:=&EID;
+new   2:        E_ID NUMBER:=4;
+NO SUCH DATA FOUND
+PL/SQL procedure successfully completed.
 ```
