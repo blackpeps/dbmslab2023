@@ -170,6 +170,27 @@ PL/SQL procedure successfully completed.
 
 ### 3. Write a PL/SQL block to handle the following BUILT-IN EXCEPTIONS.
 
+**Algorithm:**
+
+1. **Declare:**
+   - Declare a numeric variable `E_ID` and `M`.
+   - Declare a custom exception `NULL_ERROR`.
+
+2. Accept an integer input for `E_ID`.
+
+3. Retrieve the `AGE` into `M` from `CUSTOMER17` where `ID` equals `E_ID`.
+
+4. Check If `M` is NULL, raise `NULL_ERROR`.
+
+5. **Handle Exceptions:**
+   - Handle `NO_DATA_FOUND` (Output 'NO SUCH DATA FOUND').
+   - Handle `TOO_MANY_ROWS` (Output 'MANY ROWS PRESENT').
+   - Handle `NULL_ERROR` (Output 'ERROR DUE TO NULL').
+
+6. Run the PL/SQL block.
+
+7. End the program.
+
 **PROGRAM**
 
 ```sql
