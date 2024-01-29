@@ -31,7 +31,7 @@
 - A note while installation, leave the default settings as it is, except for selecting the option to install all the components (Full).
 - Run `MySQL 8.0 Command Line Client` from start menu (As destop shortcuts are rarely created).
 
-  ![Alt text](/img/image-14.png)
+![image-14](https://github.com/blackpeps/dbmslab2023/assets/126700907/9afbe459-cc75-47ea-8dc0-88c58d0d6e87)
 
 - Do set a password for the root. Unlike linux (Ubuntu) you can directly login to your mySQL without needing to enter the following:
 
